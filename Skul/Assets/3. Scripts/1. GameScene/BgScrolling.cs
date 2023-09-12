@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class BgScrolling : MonoBehaviour
 {
-    private float speed = 1f;
-    private float offset = default;
+    private float speed = 1f;               // 배경 스크롤링 속도
+    private float offset = default;         // 배경 텍스처 offset
     private Renderer bgRender = default;
 
     void Start()
