@@ -1,0 +1,767 @@
+fileFormatVersion: 2
+guid: bda4c4996a42144439d15e815b9b3847
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: GreenWooden_Idle_1
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 671
+        width: 52
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a83662159096f146b7210d429090733
+      internalID: 1848840242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreenWooden_Idle_2
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 667
+        width: 53
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0eb455dfdd7cdd84b8a457c709f82031
+      internalID: 904231418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreenWooden_Idle_3
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 666
+        width: 53
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2f505188eb478d40baa3d0c4b70f7f0
+      internalID: 50527824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreenWooden_Idle_4
+      rect:
+        serializedVersion: 2
+        x: 501
+        y: 661
+        width: 53
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abf9f51ec1cd8dd4c88bcb693347aba3
+      internalID: 669904225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreenWooden_Idle_5
+      rect:
+        serializedVersion: 2
+        x: 621
+        y: 660
+        width: 53
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e2de8c32af274f44bd913525acd9a79
+      internalID: -2009490794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreenWooden_Walk_1
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 517
+        width: 50
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfcc8cdbedb9aa74dab7b8d3cd122b13
+      internalID: -1214082654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreenWooden_Walk_2
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 514
+        width: 50
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f94ccb8886f2ea4b846843247aa35be
+      internalID: 1287027967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreenWooden_Walk_3
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 508
+        width: 50
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bd78f6c72d81314c809c4436cd5c177
+      internalID: -120180180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreenWooden_Walk_4
+      rect:
+        serializedVersion: 2
+        x: 542
+        y: 506
+        width: 50
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0add6d2fad185284395f82980818f65a
+      internalID: 1431240877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreenWooden_Walk_5
+      rect:
+        serializedVersion: 2
+        x: 685
+        y: 499
+        width: 50
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0227dba69f0d7ae47a9ea5adc60bd107
+      internalID: 2104965974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreenWooden_Attack_1
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 310
+        width: 52
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6190abb8c49bf74689a2b4779b9acfe
+      internalID: 1933008216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreenWooden_Attack_2
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 306
+        width: 52
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 070f80b0527aa59428cb6d4f995c0146
+      internalID: 964821358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreenWooden_Attack_3
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 305
+        width: 52
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81b02fb5d9067db4dadd93fd87483bfb
+      internalID: -724500572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreenWooden_Attack_4
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 313
+        width: 78
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e008f266630312419847f93d898ee8b
+      internalID: 1978277893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreenWooden_Attack_5
+      rect:
+        serializedVersion: 2
+        x: 629
+        y: 314
+        width: 66
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ffbe9c391895f44094ae6396a606ff1
+      internalID: 2051773406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreenWooden_Attack_6
+      rect:
+        serializedVersion: 2
+        x: 774
+        y: 311
+        width: 65
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d738e273ae13fc14388bc6ef863426b4
+      internalID: -1052237076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreenWooden_Attack_7
+      rect:
+        serializedVersion: 2
+        x: 901
+        y: 309
+        width: 65
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b9f5a4902a8ee9428617200c0a1d93c
+      internalID: -2031079765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreenWooden_Attack_8
+      rect:
+        serializedVersion: 2
+        x: 1032
+        y: 305
+        width: 65
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bdd259d543c219489eb2bee6c826657
+      internalID: 488328070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreenWooden_Attack_Effect_4
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 184
+        width: 120
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0978859075625d84da07a7a35ef9ba40
+      internalID: 1633000219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreenWooden_Attack_Effect_3
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 187
+        width: 112
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8deb8de3516ff854890d3383caa36f77
+      internalID: 1639130609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreenWooden_Attack_Effect_2
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 187
+        width: 106
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 787c2a60f07d6c449b2442290d66ca49
+      internalID: -1794471543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreenWooden_Attack_Effect_1
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 189
+        width: 97
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39b4b20edf88da24db9e97907ca93887
+      internalID: 1159607156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreenWooden_Attack_Effect_5
+      rect:
+        serializedVersion: 2
+        x: 790
+        y: 185
+        width: 116
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb8712dfbac54494b9d430a53244b035
+      internalID: 882018627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreenWooden_Attack_Effect_6
+      rect:
+        serializedVersion: 2
+        x: 979
+        y: 188
+        width: 110
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdc558391c02e844ba84e5a5b374a80b
+      internalID: -1287143551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreenWooden_Attack_Effect_7
+      rect:
+        serializedVersion: 2
+        x: 1150
+        y: 187
+        width: 104
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d82c195fe6f45654f8818ce97a6ce7ea
+      internalID: 1181599907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreenWooden_Attack_Effect_8
+      rect:
+        serializedVersion: 2
+        x: 1317
+        y: 187
+        width: 97
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1526c6c60e7a25d43846c5f441a267d2
+      internalID: 781031046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreenWooden_Attack_Effect_9
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 89
+        width: 120
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e187983fd240d6845a9ac665030fd037
+      internalID: -1165039566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      GreenWooden_50: 1474623309
+      GreenWooden_43: -1110909630
+      GreenWooden_55: -1581413125
+      GreenWooden_30: 2074484044
+      GreenWooden_Attack_Effect_8: 781031046
+      GreenWooden_52: -358355474
+      GreenWooden_20: 287864578
+      GreenWooden_45: 76183960
+      GreenWooden_26: -1852651654
+      GreenWooden_Walk_1: -1214082654
+      GreenWooden_Attack_Effect_1: 1159607156
+      GreenWooden_Attack_7: -2031079765
+      GreenWooden_31: -963303736
+      GreenWooden_Idle_1: 1848840242
+      GreenWooden_Walk_3: -120180180
+      GreenWooden_51: 1974075342
+      GreenWooden_49: -1558931542
+      GreenWooden_Idle_5: -2009490794
+      GreenWooden_39: 587901472
+      GreenWooden_24: -199970247
+      GreenWooden_Attack_1: 1933008216
+      GreenWooden_Attack_Effect_9: -1165039566
+      GreenWooden_Attack_Effect_5: 882018627
+      GreenWooden_Attack_4: 1978277893
+      GreenWooden_Attack_Effect_2: -1794471543
+      GreenWooden_36: -1233441874
+      GreenWooden_28: 946889108
+      GreenWooden_Attack_6: -1052237076
+      GreenWooden_Idle_3: 50527824
+      GreenWooden_41: -632743814
+      GreenWooden_35: -1834684895
+      GreenWooden_33: 998816645
+      GreenWooden_23: 55879619
+      GreenWooden_42: -99284426
+      GreenWooden_47: -1033998061
+      GreenWooden_Attack_Effect_4: 1633000219
+      GreenWooden_48: -1135865257
+      GreenWooden_Walk_2: 1287027967
+      GreenWooden_Walk_4: 1431240877
+      GreenWooden_Idle_4: 669904225
+      GreenWooden_40: -855911803
+      GreenWooden_37: 1421818573
+      GreenWooden_29: -1233082646
+      GreenWooden_Attack_3: -724500572
+      GreenWooden_27: 751864640
+      GreenWooden_Attack_2: 964821358
+      GreenWooden_Attack_5: 2051773406
+      GreenWooden_19: -384465304
+      GreenWooden_21: 161198404
+      GreenWooden_Attack_Effect_3: 1639130609
+      GreenWooden_Attack_Effect_7: 1181599907
+      GreenWooden_18: 945257986
+      GreenWooden_46: -878545641
+      GreenWooden_38: -1090804650
+      GreenWooden_22: -1674386177
+      GreenWooden_32: -1695611707
+      GreenWooden_34: 1305393670
+      GreenWooden_54: -1554441885
+      GreenWooden_Attack_Effect_6: -1287143551
+      GreenWooden_Idle_2: 904231418
+      GreenWooden_44: 134357657
+      GreenWooden_53: -407736826
+      GreenWooden_Attack_8: 488328070
+      GreenWooden_Walk_5: 2104965974
+      GreenWooden_25: -1348660097
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
