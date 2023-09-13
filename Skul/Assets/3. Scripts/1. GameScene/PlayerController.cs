@@ -102,7 +102,7 @@ public class PlayerController : MonoBehaviour
         // 공격키 입력
         if (Input.GetKeyDown(KeyCode.C))
         {
-
+            playerAni.SetTrigger("isAttack");
         }
     }
 
