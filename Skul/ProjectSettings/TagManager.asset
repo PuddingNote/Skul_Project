@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Platform
+  - Ground
   layers:
   - Default
   - TransparentFX
@@ -56,4 +57,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 4094981829
+    locked: 0
+  - name: Enemy
+    uniqueID: 546479383
     locked: 0
