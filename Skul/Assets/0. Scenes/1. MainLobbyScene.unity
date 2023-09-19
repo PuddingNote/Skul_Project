@@ -654,7 +654,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &154993361
 GameObject:
@@ -4475,11 +4475,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1267832488}
   - component: {fileID: 1267832489}
-  - component: {fileID: 1267832491}
   - component: {fileID: 1267832490}
+  - component: {fileID: 1267832491}
   - component: {fileID: 1267832493}
   - component: {fileID: 1267832494}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -4541,7 +4541,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -199985467
   m_SortingLayer: 5
-  m_SortingOrder: 2
+  m_SortingOrder: 1
   m_Sprite: {fileID: 474903235, guid: 7714562e479018248a469de119855759, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -5743,13 +5743,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114302202, guid: 28b37909a40258149b83f46bde2950a6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.85
+      objectReference: {fileID: 0}
     - target: {fileID: 2964963071563277857, guid: 28b37909a40258149b83f46bde2950a6, type: 3}
       propertyPath: m_Name
       value: NomalWooden
       objectReference: {fileID: 0}
     - target: {fileID: 2964963071563277858, guid: 28b37909a40258149b83f46bde2950a6, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2964963071563277858, guid: 28b37909a40258149b83f46bde2950a6, type: 3}
       propertyPath: m_LocalPosition.x
