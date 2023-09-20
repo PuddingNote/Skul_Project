@@ -871,7 +871,7 @@ TextureImporter:
       JumpAttack0: 706526465
       AttackB2: 219334093
       JumpAttack1: 434268856
-      AttackB1: -1877399678
+      Idle2: 1124103369
       JumpAttack2: -584602483
       AttackB3: -1913244783
       AttackA4: 1414604285
@@ -896,8 +896,8 @@ TextureImporter:
       AttackA1: -960082749
       Idle1: 474903235
       Fall0: -1421262129
-      Idle2: 1124103369
       Walk1: -1249112185
+      AttackB1: -1877399678
       AttackA0: -1850095703
       Dash0: -1229121597
       Walk5: -2131367350

@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class MonsterMove : IMonsterState
 {
-    private int offsetX; // 이동방향 변수
-    private bool exitState; // 코루틴 while문 탈출조건
-    private Vector3 localScale; // 바라보는방향 전환 변수
+    private int offsetX;                    // 이동방향 변수
+    private bool exitState;                 // 코루틴 while문 탈출조건
+    private Vector3 localScale;             // 바라보는방향 전환 변수
     private MonsterController mController;
 
     public void StateEnter(MonsterController _mController)
@@ -17,6 +17,7 @@ public class MonsterMove : IMonsterState
         mController.monster.monsterAni.SetBool("isWalk", true);
         exitState = false;
         localScale = mController.monster.transform.localScale;
+
         mController.CoroutineDeligate(randomPosX());
     }
 
@@ -39,12 +40,13 @@ public class MonsterMove : IMonsterState
     // 몬스터 이동시키는 함수
     private void Move()
     {
+        // BigWooden은 move X
         if (mController.monster._name == "BigWooden")
         {
             return;
         }
         ChangeIdleAni();
-        ChangLookDirection();
+        ChangeLookDirection();
         GroundCheck();
 
         mController.monster.transform.Translate(new Vector2(offsetX, 0f) * mController.monster.moveSpeed * Time.deltaTime);
@@ -66,7 +68,7 @@ public class MonsterMove : IMonsterState
     }
 
     // 이동할 방향으로 바라보는 방향 전환하는 함수
-    private void ChangLookDirection()
+    private void ChangeLookDirection()
     {
         // offsetX값에 따라 바라보는 방향처리
         if (offsetX != 0)
@@ -74,13 +76,13 @@ public class MonsterMove : IMonsterState
             // offsetX값이 0보다 작으면 왼쪽, 0보다 크면 오른쪽
             if (offsetX < 0)
             {
-                mController.monster.groundCheckRay._isRight = false;
+                mController.monster.groundCheckRay.isRight = false;
                 localScale = new Vector3(-1, localScale.y, localScale.z);
                 mController.monster.transform.localScale = localScale;
             }
             else if (offsetX > 0)
             {
-                mController.monster.groundCheckRay._isRight = true;
+                mController.monster.groundCheckRay.isRight = true;
                 localScale = new Vector3(1, localScale.y, localScale.z);
                 mController.monster.transform.localScale = localScale;
             }
@@ -96,14 +98,14 @@ public class MonsterMove : IMonsterState
         {
             if (localScale.x < 0)
             {
-                mController.monster.groundCheckRay._isRight = true;
+                mController.monster.groundCheckRay.isRight = true;
                 localScale = new Vector3(1, localScale.y, localScale.z);
                 mController.monster.transform.localScale = localScale;
                 offsetX *= -1;
             }
             else if (localScale.x > 0)
             {
-                mController.monster.groundCheckRay._isRight = false;
+                mController.monster.groundCheckRay.isRight = false;
                 localScale = new Vector3(-1, localScale.y, localScale.z);
                 mController.monster.transform.localScale = localScale;
                 offsetX *= -1;
@@ -120,7 +122,7 @@ public class MonsterMove : IMonsterState
             {
                 yield break;
             }
-            offsetX = Random.RandomRange(-1, 2);
+            offsetX = Random.Range(-1, 2);
             yield return new WaitForSeconds(3f);
         }
     }

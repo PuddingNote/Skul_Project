@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TagetSearch : IMonsterState
+public class TargetSearch : IMonsterState
 {
     private MonsterController mController;
     private Vector3 targetPos;
@@ -10,7 +10,7 @@ public class TagetSearch : IMonsterState
     public void StateEnter(MonsterController _mController)
     {
         this.mController = _mController;
-        Debug.Log($"{mController.monster.name}서치타겟 시작");
+        Debug.Log($"{mController.monster.name}타겟서치완료 추격시작");
         mController.enumState = MonsterController.MonsterState.SEARCH;
         mController.monster.monsterAni.SetBool("isWalk", true);
     }
@@ -36,14 +36,14 @@ public class TagetSearch : IMonsterState
             // targetDirection.x가 0보다 작으면 타겟은 왼쪽, 0보다 크면 타겟은 오른쪽에 있음
             if (targetDirection.x < 0)
             {
-                mController.monster.groundCheckRay._isRight = false;
+                mController.monster.groundCheckRay.isRight = false;
                 var localScale = mController.monster.transform.localScale;
                 localScale = new Vector3(-1, localScale.y, localScale.z);
                 mController.monster.transform.localScale = localScale;
             }
             else if (targetDirection.x > 0)
             {
-                mController.monster.groundCheckRay._isRight = true;
+                mController.monster.groundCheckRay.isRight = true;
                 var localScale = mController.monster.transform.localScale;
                 localScale = new Vector3(1, localScale.y, localScale.z);
                 mController.monster.transform.localScale = localScale;

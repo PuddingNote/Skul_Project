@@ -9,7 +9,6 @@ public class PlayerController : MonoBehaviour
     private Animator playerAni;
 
     // 대쉬 관련
-    //private bool isGround = true;       // 바닥 판별
     private float dashForce = 10f;      // 대쉬 거리
     private bool canDash = true;        // 대쉬 가능 판별
     private bool isDash = false;        // 대쉬중
@@ -18,9 +17,9 @@ public class PlayerController : MonoBehaviour
     private float dashCooldown = 1f;    // 대쉬 쿨타임
 
     // 플레이어 관련
+    public float hp = default;          // hp           NormalWooden Script에서 사용중이라 일단 public으로 
+    private float maxHp = 100;          // 최대 hp
     private float speed = 5f;           // 속도
-    //private float hp = default;         // hp
-    //private float maxHp = 100;          // 최대 hp
 
     private bool isRight = true;        // 좌우 판별
     private float horizontal = default; // horizontal
@@ -40,7 +39,7 @@ public class PlayerController : MonoBehaviour
         playerRig = gameObject.GetComponent<Rigidbody2D>();
         playerAni = gameObject.GetComponent<Animator>();
         playerRig.gravityScale = 1f;
-        //hp = maxHp;
+        hp = maxHp;
     }
 
     private void Update()
@@ -84,7 +83,7 @@ public class PlayerController : MonoBehaviour
         horizontal = Input.GetAxisRaw("Horizontal");
         playerAni.SetBool("isWalk", isWalk);
 
-        // 점프키 입력 && 2번 점프
+        // 점프키 입력 && 2단 점프
         if (Input.GetKeyDown(KeyCode.X) && jumpCount < 2)
         {
             isJump = true;
@@ -198,10 +197,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Ground")
-        {
-
-        }
+        
     }
 
 }
