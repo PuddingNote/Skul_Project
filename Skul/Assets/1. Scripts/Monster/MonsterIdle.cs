@@ -13,11 +13,6 @@ public class MonsterIdle : IMonsterState
         mController.enumState = MonsterController.MonsterState.IDLE;    // IDLE상태로 설정
     }
 
-    public void StateFixedUpdate() 
-    {
-        
-    }
-
     public void StateUpdate() 
     {
         

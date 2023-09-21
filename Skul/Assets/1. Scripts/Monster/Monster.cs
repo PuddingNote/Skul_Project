@@ -5,7 +5,6 @@ using UnityEngine;
 public class Monster : MonoBehaviour
 {
     [HideInInspector] public Rigidbody2D monsterRb;
-    [HideInInspector] public AudioSource monsterAudio;
     [HideInInspector] public Animator monsterAni;
     [HideInInspector] public GroundCheckRay groundCheckRay;
     [HideInInspector] public TargetSearchRay tagetSearchRay;
@@ -22,11 +21,11 @@ public class Monster : MonoBehaviour
 
     public void InitMonsterData(MonsterData data)
     {
-        this.monsterRb = gameObject.GetComponentMust<Rigidbody2D>();
-        this.monsterAudio = gameObject.GetComponentMust<AudioSource>();
-        this.monsterAni = gameObject.GetComponentMust<Animator>();
-        this.groundCheckRay = gameObject.GetComponentMust<GroundCheckRay>();
-        this.tagetSearchRay = gameObject.GetComponentMust<TargetSearchRay>();
+        this.monsterRb                  = gameObject.GetComponent<Rigidbody2D>();
+        this.monsterAni                 = gameObject.GetComponent<Animator>();
+        this.groundCheckRay             = gameObject.GetComponent<GroundCheckRay>();
+        this.tagetSearchRay             = gameObject.GetComponent<TargetSearchRay>();
+
         this._name                      = data.name;
         this.hp                         = data.MonsterHp;
         this.maxHp                      = data.MonsterMaxHp;

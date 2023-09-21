@@ -14,7 +14,7 @@ public class NormalWooden : Monster
 
     void Awake()
     {
-        monsterController = gameObject.GetComponentMust<MonsterController>();   
+        monsterController = gameObject.GetComponent<MonsterController>();   
         monsterData = Resources.Load("NormalWooden") as MonsterData;    // NormalWooden 리소스를 로드해서 MonsterData로 변환
         InitMonsterData(monsterData);                                   // 몬스터 데이터 초기화
 
@@ -36,7 +36,8 @@ public class NormalWooden : Monster
         if (hit.collider != null)
         {
             // 플레이어 체력 감소
-            PlayerController target = hit.collider.gameObject.GetComponentMust<PlayerController>();
+            // PlayerController로 변경 해줘야함
+            PlayerControllerBefore target = hit.collider.gameObject.GetComponent<PlayerControllerBefore>();     
             int attackDamage = monsterController.monster.attackDamage;
             target.hp -= attackDamage;
             Debug.Log($"노말우든 공격! 플레이어 hp = {target.hp}");

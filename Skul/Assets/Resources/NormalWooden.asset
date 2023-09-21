@@ -17,7 +17,7 @@ MonoBehaviour:
   monsterMaxHp: 50
   attackDamage: 5
   moveSpeed: 2
-  sightRangeX: 12
+  sightRangeX: 15
   sightRangeY: 4
   attackRange: 1
   hasAdditionalAttack: 0

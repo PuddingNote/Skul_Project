@@ -26,11 +26,6 @@ public class MonsterAttack : IMonsterState
 
     }
 
-    public void StateFixedUpdate()
-    {
-        
-    }
-
     public void StateUpdate()
     {
         // 현재 진행중인 애니메이션이 끝나지 않으면 리턴

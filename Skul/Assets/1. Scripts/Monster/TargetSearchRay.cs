@@ -10,7 +10,7 @@ public class TargetSearchRay : MonoBehaviour
 
     void Start()
     {
-        monsterController = gameObject.GetComponentMust<MonsterController>();
+        monsterController = gameObject.GetComponent<MonsterController>();
     }
 
     void Update()

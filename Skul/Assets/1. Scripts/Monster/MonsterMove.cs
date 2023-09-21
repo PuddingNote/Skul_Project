@@ -22,15 +22,34 @@ public class MonsterMove : IMonsterState
         mController.CoroutineDeligate(randomPosX());
     }
 
-    public void StateFixedUpdate()
-    {
-        
-    }
-
     public void StateUpdate()
     {
         Move();
+
+        //UpdateCheck();
     }
+
+    //protected void UpdateCheck()
+    //{
+    //    if (mController.monster.tagetSearchRay.hit != null)
+    //    {
+    //        float distance = Vector2.Distance(mController.monster.transform.position, mController.monster.tagetSearchRay.hit.transform.position);
+
+    //        // 타겟과 자신의 거리가 공격사거리보다 크면 Search상태, 작으면 Attack상태로 전환
+    //        if (mController.monster.attackRange < distance)
+    //        {
+    //            // 공격애니메이션이 끝날경우 Search상태로 전환
+    //            if (mController.monster.monsterAni.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)
+    //            {
+    //                mController.ChangeState(MonsterController.MonsterState.SEARCH);
+    //            }
+    //        }
+    //        else
+    //        {
+    //            mController.ChangeState(MonsterController.MonsterState.ATTACK);
+    //        }
+    //    }
+    //}
 
     public void StateExit()
     {

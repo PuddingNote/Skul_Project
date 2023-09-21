@@ -16,11 +16,6 @@ public class TargetSearch : IMonsterState
         mController.monster.monsterAni.SetBool("isWalk", true);
     }
 
-    public void StateFixedUpdate()
-    {
-        
-    }
-
     public void StateUpdate()
     {
         FollowTaget();

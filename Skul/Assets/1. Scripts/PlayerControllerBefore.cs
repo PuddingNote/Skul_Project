@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // 기본적인 플레이어컨트롤러 스크립트
-public class PlayerController : MonoBehaviour
+public class PlayerControllerBefore : MonoBehaviour
 {
     private Rigidbody2D playerRig;
     private Animator playerAni;
