@@ -26,14 +26,14 @@ public class TargetSearchRay : MonoBehaviour
     }
 
     // 디버그용 : 플레이어 확인 범위를 시각화
-    void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        if (monsterController != null)
-        {
-            Gizmos.DrawWireCube(monsterController.monster.transform.position,
-            new Vector2(monsterController.monster.sightRangeX, monsterController.monster.sightRangeY));
-        }
-    }
+    //void OnDrawGizmos()
+    //{
+    //    Gizmos.color = Color.red;
+    //    if (monsterController != null)
+    //    {
+    //        Gizmos.DrawWireCube(monsterController.monster.transform.position,
+    //        new Vector2(monsterController.monster.sightRangeX, monsterController.monster.sightRangeY));
+    //    }
+    //}
 
 }

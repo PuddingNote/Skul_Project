@@ -6,10 +6,11 @@ public class MonsterAttack : IMonsterState
 {
     private MonsterController mController;
 
+    // 상태 들어갈때 호출
     public void StateEnter(MonsterController _mController)
     {
         this.mController = _mController;
-        mController.enumState = MonsterController.MonsterState.ATTACK;
+        mController.enumState = MonsterController.MonsterState.ATTACK;  // ATTACK 상태로 설정
 
         // 공격타입에 따른 시작공격 지정
         if (mController.monster.hasAdditionalAttack == true)
@@ -27,7 +28,7 @@ public class MonsterAttack : IMonsterState
 
     public void StateFixedUpdate()
     {
-        /*Do Nothing*/
+        
     }
 
     public void StateUpdate()
@@ -66,8 +67,8 @@ public class MonsterAttack : IMonsterState
         Vector3 targetPos = mController.monster.tagetSearchRay.hit.transform.position;
         float distance = Vector2.Distance(targetPos, mController.monster.transform.position);
 
-        // 타겟과 자신의 거리가 근접공격거리 보다 작거나같으면 AttackA, 크면 AttackB 실행
-        if (distance <= mController.monster.meleeAttackRange)
+        // 타겟과 자신의 거리가 공격범위 보다 작거나같으면 AttackA(근거리), 크면 AttackB(원거리) 실행
+        if (distance <= mController.monster.attackRange)
         {
             mController.monster.monsterAni.SetBool("isAttackB", false);
             mController.monster.monsterAni.SetBool("isAttackA", true);

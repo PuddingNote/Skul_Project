@@ -37,19 +37,18 @@ public class NormalWooden : Monster
         {
             // 플레이어 체력 감소
             PlayerController target = hit.collider.gameObject.GetComponentMust<PlayerController>();
-            int minDamage = monsterController.monster.minDamage;
-            int maxDamage = monsterController.monster.maxDamage;
-            target.hp -= Random.Range(minDamage, maxDamage);
+            int attackDamage = monsterController.monster.attackDamage;
+            target.hp -= attackDamage;
             Debug.Log($"노말우든 공격! 플레이어 hp = {target.hp}");
         }
     }
 
     // 디버그용 : 공격 영역 표시
-    void OnDrawGizmos()
-    {
-        Gizmos.color = Color.blue;
-        Gizmos.DrawWireCube(transform.position + (attackdirection * 1f), new Vector2(0.5f, 1.5f));
-    }
+    //void OnDrawGizmos()
+    //{
+    //    Gizmos.color = Color.blue;
+    //    Gizmos.DrawWireCube(transform.position + (attackdirection * 1f), new Vector2(0.5f, 1.5f));
+    //}
 
     // 공격애니메이션이 종료되면 코루틴 실행
     // 공격 상태 종료 후 대기 상태로 전환하는 함수

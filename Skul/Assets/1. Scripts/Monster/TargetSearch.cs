@@ -7,17 +7,18 @@ public class TargetSearch : IMonsterState
     private MonsterController mController;
     private Vector3 targetPos;
 
+    // 상태 들어갈때 호출
     public void StateEnter(MonsterController _mController)
     {
         this.mController = _mController;
-        Debug.Log($"{mController.monster.name}타겟서치완료 추격시작");
-        mController.enumState = MonsterController.MonsterState.SEARCH;
+        Debug.Log($"{mController.monster.name}타겟서치 추격시작");
+        mController.enumState = MonsterController.MonsterState.SEARCH;  // SEARCH 상태로 설정
         mController.monster.monsterAni.SetBool("isWalk", true);
     }
 
     public void StateFixedUpdate()
     {
-        /*Do Nothing*/
+        
     }
 
     public void StateUpdate()
@@ -30,6 +31,7 @@ public class TargetSearch : IMonsterState
     {
         targetPos = mController.monster.tagetSearchRay.hit.transform.position;
         Vector3 targetDirection = (targetPos - mController.monster.transform.position).normalized;
+
         // 타겟과 자신의 거리의 x값 위치를 비교해 바라보는방향 및 그라운드체크레이어 방향 전환
         if (targetDirection.x != 0)
         {

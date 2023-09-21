@@ -15,11 +15,9 @@ MonoBehaviour:
   monsterName: NormalWooden
   monsterHp: 50
   monsterMaxHp: 50
-  minDamage: 5
-  maxDamage: 8
+  attackDamage: 5
   moveSpeed: 2
   sightRangeX: 15
   sightRangeY: 2
   attackRange: 1
-  meleeAttackRange: 1
   hasAdditionalAttack: 0

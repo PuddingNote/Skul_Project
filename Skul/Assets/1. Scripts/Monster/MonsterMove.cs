@@ -9,10 +9,11 @@ public class MonsterMove : IMonsterState
     private Vector3 localScale;             // 바라보는방향 전환 변수
     private MonsterController mController;
 
+    // 상태 들어갈때 호출
     public void StateEnter(MonsterController _mController)
     {
         mController = _mController;
-        mController.enumState = MonsterController.MonsterState.MOVE;
+        mController.enumState = MonsterController.MonsterState.MOVE;    // MOVE상태로 설정
         Debug.Log($"{mController.monster.name}이동시작");
         mController.monster.monsterAni.SetBool("isWalk", true);
         exitState = false;
@@ -23,7 +24,7 @@ public class MonsterMove : IMonsterState
 
     public void StateFixedUpdate()
     {
-        /*Do Nothing*/
+        
     }
 
     public void StateUpdate()
