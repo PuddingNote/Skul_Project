@@ -9,13 +9,15 @@ public class GroundCheckRay : MonoBehaviour
     
     void Start()
     {
-        /*Do Nothing*/
+        
     }
 
     void Update()
     {
-        // 삼항연산자로 방향전환 체크
+        // isRight가 true면 오른쪽으로 아니면 왼쪽으로 Ray 쏘기
         Debug.DrawRay(transform.position, isRight == true ? new Vector2(1, -1).normalized * 2 : new Vector2(-1, -1).normalized * 2, Color.red);
+        
+        // 바닥 충돌 감지 후 hit에 저장
         hit = Physics2D.Raycast(transform.position, isRight == true ? new Vector2(1, -1).normalized : new Vector2(-1, -1).normalized, 2, LayerMask.GetMask(GData.GROUND_LAYER_MASK));
     }
 
