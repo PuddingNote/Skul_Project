@@ -19,7 +19,7 @@ public class GroundCheckRay : MonoBehaviour
         {
             direction = new Vector2(-1, -1).normalized;
         }
-        Debug.DrawRay(transform.position, direction * 2, Color.red);
+        Debug.DrawRay(transform.position, direction * 2, Color.red);    // 디버그용 : 바닥 체크 Ray 표시
 
         // 바닥 충돌 감지 후 hit에 저장
         hit = Physics2D.Raycast(transform.position, direction, 2, LayerMask.GetMask(GData.GROUND_LAYER_MASK));
