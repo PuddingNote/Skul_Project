@@ -5625,7 +5625,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.71875, y: 1.875}
+    oldSize: {x: 1.625, y: 1.9375}
     newSize: {x: 1.625, y: 1.9375}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -5779,22 +5779,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92971a266934a2147b324cabf77d8fa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _name: 
-  hp: 0
-  maxHp: 0
-  minDamage: 0
-  maxDamage: 0
-  moveSpeed: 0
-  sightRangeX: 0
-  sightRangeY: 0
-  attackRange: 0
-  meleeAttackRange: 0
-  hasAdditionalAttack: 0
   monsterRb: {fileID: 0}
   monsterAudio: {fileID: 0}
   monsterAni: {fileID: 0}
   groundCheckRay: {fileID: 0}
   tagetSearchRay: {fileID: 0}
+  _name: 
+  hp: 0
+  maxHp: 0
+  attackDamage: 0
+  moveSpeed: 0
+  sightRangeX: 0
+  sightRangeY: 0
+  attackRange: 0
+  hasAdditionalAttack: 0
   monsterData: {fileID: 0}
 --- !u!1 &1715621577
 GameObject:

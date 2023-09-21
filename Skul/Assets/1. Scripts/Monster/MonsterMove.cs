@@ -112,6 +112,7 @@ public class MonsterMove : IMonsterState
                 mController.monster.transform.localScale = localScale;
                 offsetX *= -1;
             }
+            Debug.Log("타일맵 끝자락!! 방향 전환");
         }
     }
 
