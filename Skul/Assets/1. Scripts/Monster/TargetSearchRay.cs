@@ -25,15 +25,14 @@ public class TargetSearchRay : MonoBehaviour
         new Vector2(monsterController.monster.sightRangeX, monsterController.monster.sightRangeY), 0, LayerMask.GetMask(GData.PLAYER_LAYER_MASK));
     }
 
-    // 디버그용 : 플레이어 확인 범위를 시각화
-    //void OnDrawGizmos()
-    //{
-    //    Gizmos.color = Color.red;
-    //    if (monsterController != null)
-    //    {
-    //        Gizmos.DrawWireCube(monsterController.monster.transform.position,
-    //        new Vector2(monsterController.monster.sightRangeX, monsterController.monster.sightRangeY));
-    //    }
-    //}
+    // 디버그용 : 플레이어 확인 범위 표시
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        if (monsterController != null)
+        {
+            Gizmos.DrawWireCube(monsterController.monster.transform.position, new Vector2(monsterController.monster.sightRangeX, monsterController.monster.sightRangeY));
+        }
+    }
 
 }
