@@ -77,17 +77,18 @@ public class MonsterMove : IMonsterState
             // offsetX값이 0보다 작으면 왼쪽, 0보다 크면 오른쪽
             if (offsetX < 0)
             {
+                // 몬스터가 왼쪽을 바라보게하고 GroundCheckRay 업데이트
                 mController.monster.groundCheckRay.isRight = false;
                 localScale = new Vector3(-1, localScale.y, localScale.z);
                 mController.monster.transform.localScale = localScale;
             }
             else if (offsetX > 0)
             {
+                // 몬스터가 오른쪽을 바라보게하고 GroundCheckRay 업데이트
                 mController.monster.groundCheckRay.isRight = true;
                 localScale = new Vector3(1, localScale.y, localScale.z);
                 mController.monster.transform.localScale = localScale;
             }
-            // raycast방향도 같이 전환
         }
     }
 

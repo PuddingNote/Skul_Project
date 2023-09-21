@@ -45,6 +45,7 @@ public class MonsterAttack : IMonsterState
             return;
         }
         ChangeAttackType();
+
     }
 
     public void StateExit()
