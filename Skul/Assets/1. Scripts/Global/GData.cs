@@ -14,6 +14,6 @@ public static partial class GData
 
     public const string GROUND_LAYER_MASK               = "Ground";
     public const string PLAYER_LAYER_MASK               = "Player";
-
+    public const string ENEMY_LAYER_MASK                = "Enemy";
 
 }

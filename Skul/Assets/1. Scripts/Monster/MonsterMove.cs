@@ -14,7 +14,7 @@ public class MonsterMove : IMonsterState
     {
         mController = _mController;
         mController.enumState = MonsterController.MonsterState.MOVE;    // MOVE상태로 설정
-        Debug.Log($"{mController.monster.name}이동시작");
+        //Debug.Log($"{mController.monster.name}이동시작");
         mController.monster.monsterAni.SetBool("isWalk", true);
         exitState = false;
         localScale = mController.monster.transform.localScale;

@@ -3,22 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class PStateMachine : MonoBehaviour
+public class PStateMachine
 {
     public Action<IPlayerState> onChangeState;
     PlayerController pController;
     public IPlayerState lastState;
-    public IPlayerState currentState
-    {
-        get;
-        private set;
-    }
+
+    public IPlayerState currentState{ get; private set; }
 
     public PStateMachine(IPlayerState defaultState, PlayerController _pController)
     {
         onChangeState += SetState;
         currentState = defaultState;
-        Debug.Log(currentState);
+        //Debug.Log(currentState);
         pController = _pController;
         SetState(currentState);
     }

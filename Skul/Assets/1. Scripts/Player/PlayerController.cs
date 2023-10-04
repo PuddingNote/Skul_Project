@@ -19,57 +19,79 @@ public class PlayerController : MonoBehaviour
     public int playerMaxHp = 100;
     public bool isGround = true;
     public bool canDash = true;
+    public PlayerGroundCheck isGroundRay;
     public PlayerState enumState = PlayerState.IDLE;            // 플레이어 현재상태 체크 변수
 
     public PStateMachine pStateMachine { get; private set; }
-    private Dictionary<PlayerState, IPlayerState> dicState = new Dictionary<PlayerState, IPlayerState>();
+    private Dictionary<PlayerState, IPlayerState> dictionaryState = new Dictionary<PlayerState, IPlayerState>();
 
     void Start()
     {
         playerHp = playerMaxHp;
+        isGroundRay = gameObject.GetComponent<PlayerGroundCheck>();
         IPlayerState idle = new PlayerIdle();
         IPlayerState move = new PlayerMove();
         IPlayerState jump = new PlayerJump();
         IPlayerState dash = new PlayerDash();
         IPlayerState attack = new PlayerAttack();
 
-        dicState.Add(PlayerState.IDLE, idle);
-        dicState.Add(PlayerState.MOVE, move);
-        dicState.Add(PlayerState.JUMP, jump);
-        dicState.Add(PlayerState.DASH, dash);
-        dicState.Add(PlayerState.ATTACK, attack);
+        dictionaryState.Add(PlayerState.IDLE, idle);
+        dictionaryState.Add(PlayerState.MOVE, move);
+        dictionaryState.Add(PlayerState.JUMP, jump);
+        dictionaryState.Add(PlayerState.DASH, dash);
+        dictionaryState.Add(PlayerState.ATTACK, attack);
         pStateMachine = new PStateMachine(idle, this);
     }
 
+    public void ChangeState(PlayerState p_state)
+    {
+        if (dictionaryState[p_state] == null)
+        {
+            return;
+        }
+
+        pStateMachine.SetState(dictionaryState[p_state]);
+    }
 
     void Update()
     {
-        if ((Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.LeftArrow)) && isGround == true)
+        if ((Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.LeftArrow)) && isGroundRay.hit.collider != null)
         {
-            pStateMachine.SetState(dicState[PlayerState.MOVE]);
-        }
-
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            pStateMachine.SetState(dicState[PlayerState.JUMP]);
-        }
-
-        if (Input.GetKeyDown(KeyCode.Z) && canDash == true)
-        {
-            pStateMachine.SetState(dicState[PlayerState.DASH]);
+            if (enumState != PlayerState.DASH)
+            {
+                // if (player.playerAni.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)
+                {
+                    ChangeState(PlayerState.MOVE);
+                }
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.X))
         {
-            pStateMachine.SetState(dicState[PlayerState.ATTACK]);
+            ChangeState(PlayerState.JUMP);
         }
 
-        if (Input.anyKey == false && isGround == true)
+        if (Input.GetKeyDown(KeyCode.Z) && canDash == true)
         {
-            pStateMachine.SetState(dicState[PlayerState.IDLE]);
+            ChangeState(PlayerState.DASH);
         }
 
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            ChangeState(PlayerState.ATTACK);
+        }
+
+        if (Input.anyKey == false && isGroundRay.hit.collider != null && enumState != PlayerState.DASH)
+        {
+            ChangeState(PlayerState.IDLE);
+        }
+
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            player.SkillA();
+        }
         pStateMachine.DoUpdate();
+
     }
 
     // interface를 상속받은 클래스는 MonoBehaviour를 상속 받지 못해서 코루틴을 대신 실행시켜줄 함수
@@ -80,9 +102,9 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Ground")
-        {
-            isGround = true;
-        }
+        //if (collision.gameObject.tag == "Ground")
+        //{
+        //    isGround = true;
+        //}
     }
 }

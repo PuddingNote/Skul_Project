@@ -15,12 +15,12 @@ public class MonsterAttack : IMonsterState
         // 공격타입에 따른 시작공격 지정
         if (mController.monster.hasAdditionalAttack == true)
         {
-            Debug.Log($"{mController.monster._name}공격시작B");
+            //Debug.Log($"{mController.monster._name}공격시작B");
             mController.monster.monsterAni.SetBool("isAttackB", true);
         }
         else
         {
-            Debug.Log($"{mController.monster._name}공격시작A");
+            //Debug.Log($"{mController.monster._name}공격시작A");
             mController.monster.monsterAni.SetBool("isAttackA", true);
         }
 

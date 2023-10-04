@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 5242169643467783179}
   m_Layer: 7
   m_Name: NormalWooden
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -171,7 +171,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monsterRb: {fileID: 0}
-  monsterAudio: {fileID: 0}
   monsterAni: {fileID: 0}
   groundCheckRay: {fileID: 0}
   tagetSearchRay: {fileID: 0}

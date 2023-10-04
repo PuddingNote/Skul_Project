@@ -36,11 +36,10 @@ public class NormalWooden : Monster
         if (hit.collider != null)
         {
             // 플레이어 체력 감소
-            // PlayerController로 변경 해줘야함
-            PlayerControllerBefore target = hit.collider.gameObject.GetComponent<PlayerControllerBefore>();     
+            PlayerController target = hit.collider.gameObject.GetComponent<PlayerController>();     
             int attackDamage = monsterController.monster.attackDamage;
-            target.hp -= attackDamage;
-            Debug.Log($"노말우든 공격! 플레이어 hp = {target.hp}");
+            target.playerHp -= attackDamage;
+            Debug.Log($"노말우든 공격! 플레이어 Hp = {target.playerHp}/{target.playerMaxHp}");
         }
     }
 
@@ -62,7 +61,7 @@ public class NormalWooden : Monster
         // 2초후 몬스터의 현재 상태가 공격이 아니라면 코루틴 종료 => 코루틴들어오고 상태가 변했을 경우 밑에 공격모션을 취소하기 위한 예외처리
         if (monsterController.enumState != MonsterController.MonsterState.ATTACK)
         {
-            Debug.Log($"2초후 상태{monsterController.enumState}");
+            //Debug.Log($"2초후 상태{monsterController.enumState}");
             yield break;
         }
 

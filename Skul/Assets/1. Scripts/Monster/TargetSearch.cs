@@ -11,7 +11,7 @@ public class TargetSearch : IMonsterState
     public void StateEnter(MonsterController _mController)
     {
         this.mController = _mController;
-        Debug.Log($"{mController.monster.name}타겟서치 추격시작");
+        //Debug.Log($"{mController.monster.name}타겟서치 추격시작");
         mController.enumState = MonsterController.MonsterState.SEARCH;  // SEARCH 상태로 설정
         mController.monster.monsterAni.SetBool("isWalk", true);
     }
