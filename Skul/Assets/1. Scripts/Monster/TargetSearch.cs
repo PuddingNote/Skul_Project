@@ -18,11 +18,11 @@ public class TargetSearch : IMonsterState
 
     public void StateUpdate()
     {
-        FollowTaget();
+        LookAndFollowTaget();
     }
 
     // 타겟을 쫓아가는 함수
-    private void FollowTaget()
+    private void LookAndFollowTaget()
     {
         targetPos = mController.monster.tagetSearchRay.hit.transform.position;  // 타겟위치 가져오기
         Vector3 targetDirection = (targetPos - mController.monster.transform.position).normalized;  // 몬스터로부터 타겟방향 계산

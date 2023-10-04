@@ -28,18 +28,18 @@ public class MonsterAttack : IMonsterState
 
     public void StateUpdate()
     {
-        // 현재 진행중인 애니메이션이 끝나지 않으면 리턴
-        if (mController.monster.monsterAni.GetCurrentAnimatorStateInfo(0).normalizedTime < 1f)
-        {
-            return;
-        }
+        //// 현재 진행중인 애니메이션이 끝나지 않으면 리턴
+        //if (mController.monster.monsterAni.GetCurrentAnimatorStateInfo(0).normalizedTime < 1f)
+        //{
+        //    return;
+        //}
 
-        // 공격타입이 1개면 리턴
-        if (mController.monster.hasAdditionalAttack == false)
-        {
-            return;
-        }
-        ChangeAttackType();
+        //// 공격타입이 1개면 리턴
+        //if (mController.monster.hasAdditionalAttack == false)
+        //{
+        //    return;
+        //}
+        //ChangeAttackType();
 
     }
 
@@ -57,23 +57,23 @@ public class MonsterAttack : IMonsterState
 
     }
 
-    // 타겟의 거리를 측정하여 공격타입을 바꾸는 함수
-    private void ChangeAttackType()
-    {
-        Vector3 targetPos = mController.monster.tagetSearchRay.hit.transform.position;
-        float distance = Vector2.Distance(targetPos, mController.monster.transform.position);
+    //// 타겟의 거리를 측정하여 공격타입을 바꾸는 함수
+    //private void ChangeAttackType()
+    //{
+    //    Vector3 targetPos = mController.monster.tagetSearchRay.hit.transform.position;
+    //    float distance = Vector2.Distance(targetPos, mController.monster.transform.position);
 
-        // 타겟과 자신의 거리가 공격범위 보다 작거나같으면 AttackA(근거리), 크면 AttackB(원거리) 실행
-        if (distance <= mController.monster.attackRange)
-        {
-            mController.monster.monsterAni.SetBool("isAttackB", false);
-            mController.monster.monsterAni.SetBool("isAttackA", true);
-        }
-        else
-        {
-            mController.monster.monsterAni.SetBool("isAttackA", false);
-            mController.monster.monsterAni.SetBool("isAttackB", true);
-        }
-    }
+    //    // 타겟과 자신의 거리가 공격범위 보다 작거나같으면 AttackA(근거리), 크면 AttackB(원거리) 실행
+    //    if (distance <= mController.monster.attackRange)
+    //    {
+    //        mController.monster.monsterAni.SetBool("isAttackB", false);
+    //        mController.monster.monsterAni.SetBool("isAttackA", true);
+    //    }
+    //    else
+    //    {
+    //        mController.monster.monsterAni.SetBool("isAttackA", false);
+    //        mController.monster.monsterAni.SetBool("isAttackB", true);
+    //    }
+    //}
 
 }

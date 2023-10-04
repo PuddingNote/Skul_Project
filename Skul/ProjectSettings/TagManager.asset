@@ -61,3 +61,6 @@ TagManager:
   - name: Enemy
     uniqueID: 546479383
     locked: 0
+  - name: NPC
+    uniqueID: 1455099649
+    locked: 0
