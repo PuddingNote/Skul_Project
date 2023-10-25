@@ -115,7 +115,700 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Skul Headless_Idle_1
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 723
+        width: 40
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5390b4bf41cfad478d77a6005603957
+      internalID: -1884299824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skul Headless_Idle_2
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 722
+        width: 40
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54a49458f74b26a40a705c94b7cb067d
+      internalID: 208259701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skul Headless_Idle_3
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 723
+        width: 40
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b068891316477104594054034411f067
+      internalID: -607277853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skul Headless_Idle_4
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 724
+        width: 40
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 112967e7c48ec7546835004b196b882e
+      internalID: -912170482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skul Headless_Walk_1
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 638
+        width: 40
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc7d8785ce14fda45a3d51788ef8ee81
+      internalID: -1517248858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skul Headless_Walk_2
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 636
+        width: 40
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96d9fa713cfce9e44b3fa2e92af5508e
+      internalID: -259406080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skul Headless_Walk_3
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 636
+        width: 40
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c40a8ea3ff521d34c99fd1343d913a7e
+      internalID: -1659814068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skul Headless_Walk_4
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 636
+        width: 40
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f947b9209d9f5c43858a3f27bd1efc1
+      internalID: -375726992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skul Headless_Walk_5
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 634
+        width: 40
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ea79bb62e74286418948041c3e2922d
+      internalID: 966587855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skul Headless_Walk_6
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 629
+        width: 40
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff15b4f5f7f36d541bc0d1f0dc7b6d93
+      internalID: 1685484804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skul Headless_Walk_7
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 629
+        width: 40
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8483fcaa9b9a8764da77c0ed7475dca0
+      internalID: -81274761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skul Headless_Walk_8
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 576
+        width: 40
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b627d971fd4d5447a3d97fdedec5c6c
+      internalID: 1244601829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skul Headless_Dash
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 558
+        width: 40
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a67090b88561304590abf402cbaf2fe
+      internalID: 1268142781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skul Headless_Jump_1
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 537
+        width: 18
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a016676dccfe11640880970e0b5eda64
+      internalID: 2078381134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skul Headless_Jump_2
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 538
+        width: 18
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93f1b2e1c74b38641a770099b0c246f3
+      internalID: 1694104863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skul Headless_Fall_1
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 470
+        width: 30
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b61b0fb43a7833b4f948f247d5437689
+      internalID: 549332410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skul Headless_Fall_2
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 469
+        width: 30
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9af3381fd540914eab3544e53336448
+      internalID: 178555125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skul Headless_AttackA_3
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 395
+        width: 59
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9dbc4e043ae42e40a62f6c987dce7bb
+      internalID: 182420327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skul Headless_AttackA_1
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 476
+        width: 59
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7ef52bea4fb40b4fa8c7412ae04907d
+      internalID: 1688978717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skul Headless_AttackA_2
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 475
+        width: 59
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 262017738dcf6334fb9667fb281f794a
+      internalID: -373908925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skul Headless_AttackA_4
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 398
+        width: 59
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aff3feae6b695bf41a1c539298db2365
+      internalID: -1192517736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skul Headless_AttackA_5
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 403
+        width: 59
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d1e57132f43e0d48982fb61ede20e24
+      internalID: 320031792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skul Headless_AttackB_2
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 237
+        width: 58
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5cbca266b4ba8c4c8f9d5788e67087b
+      internalID: 848446369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skul Headless_AttackB_1
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 243
+        width: 58
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: faa2e58f3f8eca8418d00d88ee6ee8ed
+      internalID: 765198323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skul Headless_AttackB_3
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 230
+        width: 58
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9eda0fb3ca038fc4eb40de4194bff7b1
+      internalID: -458435818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skul Headless_AttackB_4
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 228
+        width: 58
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b970e04ea542bb745b1ac5093e503143
+      internalID: -1061501177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skul Headless_Jump_Attack_2
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 88
+        width: 57
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2258a023729c0234ab185754d1cf3173
+      internalID: -835983238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skul Headless_Jump_Attack_1
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 90
+        width: 57
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5359b514fafb4b42a969414d4f080ca
+      internalID: 1507338242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skul Headless_Jump_Attack_3
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 93
+        width: 57
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42edb913ff27e354ca9cb839598e483e
+      internalID: -1194063822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skul Headless_Jump_Attack_4
+      rect:
+        serializedVersion: 2
+        x: 473
+        y: 91
+        width: 57
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00024918e0eba5149b14f6f41dee6d49
+      internalID: 556713874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skul Headless_Fall_Repict_1
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 373
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b62e5169b6a0b44e8ca9135bb1d30e5
+      internalID: 1858559804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skul Headless_Fall_Repict_2
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 374
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa11e449e2832eb428b731367621ec1a
+      internalID: -617232031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skul Headless_Fall_Repict_3
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 374
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a75aaadb99532c84a8cb1087e4b4aaa5
+      internalID: 227997871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -126,7 +819,40 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Skul Headless_Walk_2: -259406080
+      Skul Headless_AttackB_1: 765198323
+      Skul Headless_Walk_1: -1517248858
+      Skul Headless_Walk_3: -1659814068
+      Skul Headless_Idle_4: -912170482
+      Skul Headless_Dash: 1268142781
+      Skul Headless_Fall_1: 549332410
+      Skul Headless_Jump_Attack_3: -1194063822
+      Skul Headless_Walk_4: -375726992
+      Skul Headless_Jump_2: 1694104863
+      Skul Headless_Fall_Repict_2: -617232031
+      Skul Headless_Idle_1: -1884299824
+      Skul Headless_Idle_3: -607277853
+      Skul Headless_AttackA_3: 182420327
+      Skul Headless_AttackA_2: -2128043181
+      Skul Headless_Walk_5: 966587855
+      Skul Headless_Walk_8: 1244601829
+      Skul Headless_Fall_2: 178555125
+      Skul Headless_AttackA_5: 320031792
+      Skul Headless_AttackB_3: -458435818
+      Skul Headless_AttackB_4: -1061501177
+      Skul Headless_AttackA_1: 1688978717
+      Skul Headless_Jump_Attack_1: 1507338242
+      Skul Headless_Walk_7: -81274761
+      Skul Headless_Walk_6: 1685484804
+      Skul Headless_Jump_Attack_2: -835983238
+      Skul Headless_Fall_Repict_3: 227997871
+      Skul Headless_Fall_Repict_1: 1858559804
+      Skul Headless_AttackB_2: 848446369
+      Skul Headless_Idle_2: 208259701
+      Skul Headless_Jump_1: 2078381134
+      Skul Headless_AttackA_4: -1192517736
+      Skul Headless_Jump_Attack_4: 556713874
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

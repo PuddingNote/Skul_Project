@@ -15,3 +15,4 @@ MonoBehaviour:
   playerName: Player
   attackDamage: 10
   moveSpeed: 5
+  controller: {fileID: 9100000, guid: 9bb02f0be213d6949b537cc1109a7086, type: 2}

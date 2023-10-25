@@ -17,4 +17,8 @@ public class PlayerData : ScriptableObject
     [SerializeField]
     private float moveSpeed;                                    // 이동속도
     public float MoveSpeed { get { return moveSpeed; } }
+
+    [SerializeField]
+    private RuntimeAnimatorController controller;               
+    public RuntimeAnimatorController Controller { get { return controller; } }
 }

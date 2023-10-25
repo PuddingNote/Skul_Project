@@ -26,7 +26,7 @@ public class PlayerAttack : IPlayerState
 
     public void StateUpdate()
     {
-        UseJumpAttack();
+        //ExitAttack();
     }
 
     public void StateExit()
@@ -37,7 +37,7 @@ public class PlayerAttack : IPlayerState
     }
 
     // 공중공격을 한 경우 다음 행동 정하는 함수
-    private void UseJumpAttack()
+    private void ExitAttack()
     {
         // 공격 애니메이션이 끝나면 들어감
         if (pController.player.playerAni.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)
