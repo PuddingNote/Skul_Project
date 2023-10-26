@@ -63,7 +63,7 @@ public class Skul : Player
         Debug.Log("use SkillA?");
         playerAni.SetBool("isSkillA", true);
         skillAObj = Instantiate(Resources.Load("0.Prefabs/SkulSkillAEffect") as GameObject);
-        //skillAObj.GetComponent<SkulSkillA>().Init(this);
+        skillAObj.GetComponent<SkulSkillA>().Init(this);
         playerAni.runtimeAnimatorController = SkulHeadless;
     }
 
