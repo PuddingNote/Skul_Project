@@ -28,7 +28,6 @@ public class PlayerController : MonoBehaviour
     public bool canDash = true;
     public PlayerGroundCheck isGroundRay;
     public PlayerState enumState = PlayerState.IDLE;            // 플레이어 현재상태 체크 변수
-    private PStateMachine _pStateMachine;
 
     public PStateMachine pStateMachine { get; private set; }
     private Dictionary<PlayerState, IPlayerState> dictionaryState = new Dictionary<PlayerState, IPlayerState>();
@@ -44,8 +43,8 @@ public class PlayerController : MonoBehaviour
         // playerAni.runtimeAnimatorController = player.playerAni.runtimeAnimatorController;
         // 기본 스컬의 런타임애니컨트롤러를 저장 => 스킬A,B사용시 런타임애니컨트롤러를 변경하는 로직
         gameObject.AddComponent<Skul>();
-        BeforeChangeRuntimeC = player.playerAni.runtimeAnimatorController;
-        // InitPlayer();
+        //BeforeChangeRuntimeC = player.playerAni.runtimeAnimatorController;
+        //InitPlayer();
         playerHp = playerMaxHp;
         isGroundRay = gameObject.GetComponent<PlayerGroundCheck>();
         IPlayerState idle = new PlayerIdle();

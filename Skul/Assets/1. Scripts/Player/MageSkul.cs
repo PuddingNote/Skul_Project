@@ -6,12 +6,11 @@ public class MageSkul : Player
 {
     public PlayerData playerData;
     private PlayerController playerController;
-    private GameObject skillAObj;
 
     void OnEnable()
     {
         playerController = gameObject.GetComponent<PlayerController>();
-        playerData = Resources.Load("EntSkul") as PlayerData;
+        playerData = Resources.Load("MageSkul") as PlayerData;
         InitPlayerData(playerData);
         playerController.player = (Player)(this as Player);
         Debug.Log("MageSkul");

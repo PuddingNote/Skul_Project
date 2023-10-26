@@ -19,7 +19,6 @@ public class SkulSkillA : MonoBehaviour
         skillA_Rb = gameObject.GetComponent<Rigidbody2D>();
         skillA_Ani = gameObject.GetComponent<Animator>();
 
-        // 중력조절 히트하거나 사거리까지 이동했을때 중력적용할 것임
         originalGravity = skillA_Rb.gravityScale;
         skillA_Rb.gravityScale = 0f;
     }
