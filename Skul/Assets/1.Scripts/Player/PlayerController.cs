@@ -56,15 +56,6 @@ public class PlayerController : MonoBehaviour
         pStateMachine = new PStateMachine(idle, this);
     }
 
-    public void ChangeState(PlayerState p_state)
-    {
-        if (dictionaryState[p_state] == null)
-        {
-            return;
-        }
-
-        pStateMachine.SetState(dictionaryState[p_state]);
-    }
 
     void Update()
     {
@@ -139,6 +130,18 @@ public class PlayerController : MonoBehaviour
     //    playerSprite.sprite = childObj.GetComponent<SpriteRenderer>().sprite;
     //    playerHp = playerMaxHp;
     //}
+
+    // 플레이어 상태 변경
+    public void ChangeState(PlayerState p_state)
+    {
+        if (dictionaryState[p_state] == null)
+        {
+            return;
+        }
+
+        pStateMachine.SetState(dictionaryState[p_state]);
+    }
+
 
     // 플레이어 스컬교체하는 함수
     private void ChangePlayer()
