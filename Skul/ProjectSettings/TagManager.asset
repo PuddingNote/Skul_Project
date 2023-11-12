@@ -14,11 +14,11 @@ TagManager:
   - 
   - Water
   - UI
-  - Player
-  - Enemy
   - Ground
-  - 
-  - 
+  - Enemy
+  - EnemyEffect
+  - Player
+  - PlayerEffect
   - 
   - 
   - 
@@ -56,12 +56,18 @@ TagManager:
   - name: BackGround0
     uniqueID: 453455633
     locked: 0
-  - name: Player
-    uniqueID: 4094981829
+  - name: NPC
+    uniqueID: 1455099649
     locked: 0
   - name: Enemy
     uniqueID: 546479383
     locked: 0
-  - name: NPC
-    uniqueID: 1455099649
+  - name: EnemyEffect
+    uniqueID: 3866968473
+    locked: 0
+  - name: Player
+    uniqueID: 4094981829
+    locked: 0
+  - name: UI
+    uniqueID: 4200100135
     locked: 0
