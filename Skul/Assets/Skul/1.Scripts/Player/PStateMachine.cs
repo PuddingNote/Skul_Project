@@ -6,7 +6,7 @@ using System;
 public class PStateMachine// : MonoBehaviour
 {
     public Action<IPlayerState> onChangeState;
-    PlayerController pController;
+    private PlayerController pController;
     public IPlayerState lastState;
 
     public IPlayerState currentState

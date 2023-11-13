@@ -71,12 +71,8 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if ((Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.LeftArrow))
-            && isGroundRay.hit.collider != null
-            && enumState != PlayerState.DASH
-            && enumState != PlayerState.ATTACK
-            && enumState != PlayerState.JUMP
-            )
+        if ((Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.LeftArrow)) && isGroundRay.hit.collider != null
+            && enumState != PlayerState.DASH && enumState != PlayerState.ATTACK && enumState != PlayerState.JUMP)
         {
             ChangeState(PlayerState.MOVE);
         }
@@ -96,11 +92,8 @@ public class PlayerController : MonoBehaviour
             ChangeState(PlayerState.ATTACK);
         }
 
-        if (Input.anyKey == false 
-            && isGroundRay.hit.collider != null
-            && enumState != PlayerState.DASH
-            && enumState != PlayerState.ATTACK
-            )
+        if (Input.anyKey == false && isGroundRay.hit.collider != null
+            && enumState != PlayerState.DASH && enumState != PlayerState.ATTACK)
         {
             ChangeState(PlayerState.IDLE);
         }
@@ -120,6 +113,7 @@ public class PlayerController : MonoBehaviour
         {
             ChangePlayer();
         }
+
         pStateMachine.DoUpdate();
     }
 

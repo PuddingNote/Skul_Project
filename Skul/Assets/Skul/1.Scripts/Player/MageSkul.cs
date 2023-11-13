@@ -26,10 +26,10 @@ public class MageSkul : Player
         AttackAandB();
     }
 
-    // 공격A, B의 히트 판정 처리하는 함수
+    // AttackA, B의 히트 판정 처리하는 함수
     private void AttackAandB()
     {
-
+        Debug.Log("Attack");
     }
 
     public override void SkillA()

@@ -16,7 +16,7 @@ public class PlayerJump : IPlayerState
         this.pController = _pController;
         pController.enumState = PlayerController.PlayerState.JUMP;
         //jumpEffect = pController.gameObject.FindChildObj("JumpEffect");
-        //Debug.Log($"Player Jump? {pController.enumState}");
+        Debug.Log(pController.enumState);
 
         if (pController.isGroundRay.hit.collider != null)
         {

@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class SkulSkillA : MonoBehaviour
 {
-    public Skul parentObj;
-    private float speed = 7f;           // 스킬 속도
-    private float range = 15f;          // 스킬 사거리
-    public float direction;             // 스킬 이동 방향
-    private float originalGravity;      // 날아가는도중 중력영향을 안받게하기위한 변수
-    private bool isHit = false;         // 스킬이 Hit했는지
-    private Vector3 startVector;        // 스킬 시작위치
     private Rigidbody2D skillA_Rb;
     private Animator skillA_Ani;
+    private Skul parentObj;
+
+    private Vector3 startVector;        // 스킬 시작위치
+    private float speed = 7f;           // 스킬 속도
+    private float range = 15f;          // 스킬 사거리
+    private float direction;             // 스킬 이동 방향
+    private float originalGravity;      // 날아가는도중 중력영향을 안받게하기위한 변수
+    private bool isHit = false;         // 스킬이 Hit했는지
 
     void Awake()
     {

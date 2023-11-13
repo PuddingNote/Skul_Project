@@ -14,7 +14,7 @@ public class PlayerDash : IPlayerState
     {
         this.pController = _pController;
         pController.enumState = PlayerController.PlayerState.DASH;
-        //Debug.Log($"Player Dash? {pController.enumState}");
+        Debug.Log(pController.enumState);
     }
 
     public void StateUpdate()
@@ -24,6 +24,7 @@ public class PlayerDash : IPlayerState
 
     public void StateExit()
     {
+        // 대쉬를 점프로 캔슬하는게 맞나?
         // 대쉬를 점프로 캔슬했을 때 velocity가 zero가되면 바로 낙하 하는걸 방지
         // 대쉬 상태를 나갈 때 플레이어의 velocity 초기화
         pController.player.playerRb.velocity = Vector2.zero;

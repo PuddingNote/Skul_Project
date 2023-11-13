@@ -10,7 +10,7 @@ public class PlayerAttack : IPlayerState
     {
         this.pController = _pController;
         pController.enumState = PlayerController.PlayerState.ATTACK;
-        //Debug.Log($"Player Attack? {pController.enumState}");
+        Debug.Log(pController.enumState);
 
         if (pController.isGroundRay.hit.collider != null)
         {
