@@ -15,7 +15,7 @@ MonoBehaviour:
   playerName: MageSkul
   attackDamage: 10
   moveSpeed: 5
-  controller: {fileID: 9100000, guid: dc7ad6264d9b88d4cb91db394cfa860d, type: 2}
+  controller: {fileID: 9100000, guid: 711951c01ce20db419166c31259591ef, type: 2}
   colliderSizeX: 1
   colliderSizeY: 1
   groundRayLength: 0.5

@@ -69,7 +69,11 @@ public class PlayerDash : IPlayerState
         pController.player.playerAni.SetBool("isDash", false);
 
         // 대쉬가 끝나면 강제로 이전 상태로 전환
-        pController.pStateMachine.onChangeState?.Invoke(lastState);
+        //pController.pStateMachine.onChangeState?.Invoke(lastState);
+        if (pController.pStateMachine.onChangeState != null)
+        {
+            pController.pStateMachine.onChangeState(lastState);
+        }
 
         // 2단 대쉬
         if (dashCount >= 2)

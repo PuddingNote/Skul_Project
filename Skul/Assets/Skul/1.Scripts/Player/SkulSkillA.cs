@@ -11,7 +11,7 @@ public class SkulSkillA : MonoBehaviour
     private Vector3 startVector;        // 스킬 시작위치
     private float speed = 7f;           // 스킬 속도
     private float range = 15f;          // 스킬 사거리
-    private float direction;             // 스킬 이동 방향
+    private float direction;            // 스킬 이동 방향
     private float originalGravity;      // 날아가는도중 중력영향을 안받게하기위한 변수
     private bool isHit = false;         // 스킬이 Hit했는지
 
@@ -87,7 +87,7 @@ public class SkulSkillA : MonoBehaviour
         }
     }
 
-    // 자신의 부모를 입력받는 함수
+    // 자신의 부모를 입력받는 함수 (Skul)
     public void Init(Skul parent)
     {
         parentObj = parent;
@@ -107,7 +107,9 @@ public class SkulSkillA : MonoBehaviour
         skillA_Rb.gravityScale = originalGravity;   // 중력값 복구
         skillA_Ani.StartPlayback();                 // 애니메이션 역재생
         yield return new WaitForSeconds(4f);
+
         parentObj.onHeadBack?.Invoke();
+
         Destroy(gameObject);
         Debug.Log("해골 파괴");
     }

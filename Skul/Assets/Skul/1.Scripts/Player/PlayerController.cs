@@ -145,8 +145,8 @@ public class PlayerController : MonoBehaviour
     // 캐릭터 Swap쿨다운 적용 코루틴 함수
     IEnumerator SwapCoolDown()
     {
-        // 스왑쿨다운 6초 설정
-        for (int i = 0; i < 60; i++)
+        // 스왑쿨다운 5초 설정
+        for (int i = 0; i < 50; i++)
         {
             float tick = 0.1f;
             swapCoolDown += tick;

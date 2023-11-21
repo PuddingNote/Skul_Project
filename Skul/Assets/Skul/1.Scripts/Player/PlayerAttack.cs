@@ -56,7 +56,11 @@ public class PlayerAttack : IPlayerState
             }
 
             // 공격이 끝나면 다음 상태로 전환
-            pController.pStateMachine.onChangeState?.Invoke(nextState);
+            //pController.pStateMachine.onChangeState?.Invoke(nextState);
+            if (pController.pStateMachine.onChangeState != null)
+            {
+                pController.pStateMachine.onChangeState(nextState);
+            }
         }
     }
 

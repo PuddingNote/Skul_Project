@@ -10,6 +10,7 @@ public class Skul : Player
     private RuntimeAnimatorController SkulHeadless;
     public Action onHeadBack;
     private GameObject skillAObj;
+    private SpriteRenderer spriteRenderer;       // 색상값 조정을 위해 임시 추가
 
     void OnEnable()
     {
@@ -22,6 +23,10 @@ public class Skul : Player
         playerData = Resources.Load("3.Scriptable Object/SkulData") as PlayerData;
         InitPlayerData(playerData);
         playerController.player = (Player)(this as Player);
+
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer.color = Color.white;
+
         Debug.Log("Skul");
     }
 

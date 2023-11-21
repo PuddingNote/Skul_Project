@@ -9,13 +9,13 @@ public class PlayerJump : IPlayerState
     private float jumpForce = 7f;               // 점프 높이 변수
     private Vector3 direction;                  // 이동 방향 변수
     private Vector3 localScale;                 // 방향 전환 변수
-    //private GameObject jumpEffect;              //점프이펙트 변수
+    private GameObject jumpEffect;              // 점프이펙트 변수
 
     public void StateEnter(PlayerController _pController)
     {
         this.pController = _pController;
         pController.enumState = PlayerController.PlayerState.JUMP;
-        //jumpEffect = pController.gameObject.FindChildObj("JumpEffect");
+        jumpEffect = pController.gameObject.FindChildObj("JumpEffect");
         Debug.Log(pController.enumState);
 
         if (pController.isGroundRay.hit.collider != null)
@@ -27,10 +27,19 @@ public class PlayerJump : IPlayerState
 
     public void StateUpdate()
     {
-        //JumpEffectOff();
+        JumpEffectOff();
         JumpAndMove();
         Jump();
         PlayerFall();
+
+        //if (pController.isGround && (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.LeftArrow)))
+        //{
+        //    pController.ChangeState(PlayerController.PlayerState.MOVE);
+        //}
+        //else if (!pController.isGround)
+        //{
+        //    pController.ChangeState(PlayerController.PlayerState.JUMP);
+        //}
     }
 
     public void StateExit()
@@ -74,6 +83,7 @@ public class PlayerJump : IPlayerState
         {
             pController.player.playerAni.SetBool("isFall", true);
         }
+
     }
 
     // 점프하는 함수
@@ -86,19 +96,21 @@ public class PlayerJump : IPlayerState
                 Vector3 playerVelocity = pController.player.playerRb.velocity;
                 pController.player.playerRb.velocity = new Vector3(playerVelocity.x, 0, playerVelocity.z);
 
-                //jumpEffect.SetActive(true);
+                jumpEffect.SetActive(true);
             }
             pController.player.playerAni.SetBool("isJump", true);
             pController.player.playerRb.velocity = pController.player.transform.up * jumpForce;
             jumpCount += 1;
         }
+
     }
 
-    //private void JumpEffectOff()
-    //{
-    //    if (jumpEffect.GetComponentMust<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)
-    //    {
-    //        jumpEffect.SetActive(false);
-    //    }
-    //}
+    private void JumpEffectOff()
+    {
+        if (jumpEffect.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)
+        {
+            jumpEffect.SetActive(false);
+        }
+
+    }
 }
