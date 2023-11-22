@@ -13,7 +13,7 @@ public class PlayerMove : IPlayerState
         this.pController = _pController;
         pController.enumState = PlayerController.PlayerState.MOVE;
 
-        Debug.Log(pController.enumState);
+        //Debug.Log(pController.enumState);
 
         pController.player.playerAni.SetBool("isWalk", true);
         localScale = pController.player.transform.localScale;

@@ -38,10 +38,15 @@ public class NormalWooden : Monster
         if (hit.collider != null)
         {
             // 플레이어 체력 감소
-            PlayerController target = hit.collider.gameObject.GetComponent<PlayerController>();     
-            int attackDamage = monsterController.monster.attackDamage;
-            target.playerHp -= attackDamage;
-            Debug.Log($"노말우든 공격! 플레이어 Hp = {target.playerHp}/{target.playerMaxHp}");
+            PlayerController target = hit.collider.gameObject.GetComponent<PlayerController>();
+            if (target.isHit == false)
+            {
+                int attackDamage = monsterController.monster.attackDamage;
+                target.playerHp -= attackDamage;
+                int direction = target.transform.position.x - transform.position.x > 0 ? 1 : -1;
+                target.player.playerRb.AddForce(new Vector2(direction, 2f), ForceMode2D.Impulse);
+                Debug.Log($"노말우든 공격! 플레이어 Hp = {target.playerHp}/{target.playerMaxHp}");
+            }
         }
     }
 

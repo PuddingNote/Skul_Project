@@ -7,17 +7,24 @@ using UnityEngine.SceneManagement;
 public class TitleAnyKeyClick : MonoBehaviour
 {
 
-    private void Update()
+    void Start()
+    {
+
+    }
+
+    void Update()
     {
         if (Input.anyKeyDown)
         {
-            //
+            UIManager.Instance.InitUIManager();
+            GameManager.Instance.InitGameManager();
+            GameSceneManager.Instance.LoadScene(GData.MAINLOBBY_SCENE_NAME);
         }
     }
 
-    public void TitleSceneChange(int value)
-    {
-        SceneManager.LoadScene(value);
-    }
+    //public void TitleSceneChange(int value)
+    //{
+    //    SceneManager.LoadScene(value);
+    //}
 
 }

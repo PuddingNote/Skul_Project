@@ -13,7 +13,7 @@ public class PlayerAttack : IPlayerState
         this.pController = _pController;
         pController.enumState = PlayerController.PlayerState.ATTACK;
         localScale = pController.player.transform.localScale;
-        Debug.Log(pController.enumState);
+        //Debug.Log(pController.enumState);
 
         if (pController.isGroundRay.hit.collider != null)
         {
@@ -44,7 +44,7 @@ public class PlayerAttack : IPlayerState
     // 연계공격
     private void ComboAttack()
     {
-        // 공격A 애니메이션 길이가 0.5 ~ 1 사이에 c키입력시 공격B로 연계
+        // 공격A 애니메이션 길이가 0.5 ~ 1 사이에 공격키입력시 공격B로 연계
         if (pController.player.playerAni.GetCurrentAnimatorStateInfo(0).IsName("AttackA")
         && (pController.player.playerAni.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.5f
         && pController.player.playerAni.GetCurrentAnimatorStateInfo(0).normalizedTime <= 1f))

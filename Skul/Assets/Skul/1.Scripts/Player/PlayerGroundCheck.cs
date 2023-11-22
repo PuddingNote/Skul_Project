@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerGroundCheck : MonoBehaviour
 {
-    public RaycastHit2D hit; // Ground 체크 변수
+    public RaycastHit2D hit;            // Ground 체크 변수
     private PlayerController playerController;
     private float rayLength;
 

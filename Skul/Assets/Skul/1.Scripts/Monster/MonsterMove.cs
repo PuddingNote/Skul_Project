@@ -60,6 +60,11 @@ public class MonsterMove : IMonsterState
     // 몬스터 이동시키는 함수
     private void Move()
     {
+        // 나중에 보스 만들때나 쓰일듯
+        if (mController.monster.moveSpeed == 0)
+        {
+            return;
+        }
         ChangeIdleAni();
         ChangeLookDirection();
         GroundCheck();
@@ -126,7 +131,7 @@ public class MonsterMove : IMonsterState
                 mController.monster.transform.localScale = localScale;
                 offsetX *= -1;
             }
-            Debug.Log("타일맵 끝자락!! 방향 전환");
+            Debug.Log("타일맵 끝자락이므로 방향 전환");
         }
     }
 

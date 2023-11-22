@@ -16,7 +16,7 @@ public class PlayerJump : IPlayerState
         this.pController = _pController;
         pController.enumState = PlayerController.PlayerState.JUMP;
         jumpEffect = pController.gameObject.FindChildObj("JumpEffect");
-        Debug.Log(pController.enumState);
+        //Debug.Log(pController.enumState);
 
         if (pController.isGroundRay.hit.collider != null)
         {
@@ -27,30 +27,16 @@ public class PlayerJump : IPlayerState
 
     public void StateUpdate()
     {
-        //JumpEffectOff();
         PlayerFall();
         JumpAndMove();
         Jump();
-
-        //if (pController.isGround && (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.LeftArrow)))
-        //{
-        //    pController.ChangeState(PlayerController.PlayerState.MOVE);
-        //}
-        //else if (!pController.isGround)
-        //{
-        //    pController.ChangeState(PlayerController.PlayerState.JUMP);
-        //}
     }
 
     public void StateExit()
     {
-        // 점프상태를 나갈 때 플레이어가 Ground 위에 있으면 jumpCount 초기화
-        // if (pController.isGround == true)
-        // {
-        //     jumpCount = 0;
-        // }
         pController.player.playerAni.SetBool("isJump", false);
         pController.player.playerAni.SetBool("isFall", false);
+        jumpEffect.SetActive(false);
     }
 
     // JumpState 유지한채 입력 키 방향으로 이동하면서 바라보는 함수
@@ -58,9 +44,7 @@ public class PlayerJump : IPlayerState
     {
         // 공중에 떠 있으면 시작
         // 입력받은 키 방향으로 이동하면서 바라보는 처리
-        if ((Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.LeftArrow))
-            //&& pController.isGroundRay.hit.collider == null
-            )
+        if ((Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.LeftArrow)))
         {
             if (Input.GetKey(KeyCode.RightArrow))
             {
@@ -98,7 +82,6 @@ public class PlayerJump : IPlayerState
             {
                 Vector3 playerVelocity = pController.player.playerRb.velocity;
                 pController.player.playerRb.velocity = new Vector3(playerVelocity.x, 0, playerVelocity.z);
-
                 jumpEffect.SetActive(true);
             }
             pController.player.playerAni.SetBool("isFall", false);
@@ -109,11 +92,4 @@ public class PlayerJump : IPlayerState
 
     }
 
-    //private void JumpEffectOff()
-    //{
-    //    if (jumpEffect.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)
-    //    {
-    //        jumpEffect.SetActive(false);
-    //    }
-    //}
 }

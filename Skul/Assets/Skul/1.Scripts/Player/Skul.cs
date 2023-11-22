@@ -10,6 +10,7 @@ public class Skul : Player
     private RuntimeAnimatorController SkulHeadless;
     public Action onHeadBack;
     private GameObject skillAObj;
+
     private SpriteRenderer spriteRenderer;       // 색상값 조정을 위해 임시 추가
 
     void OnEnable()
@@ -18,12 +19,13 @@ public class Skul : Player
         onHeadBack += () =>
         {
             // 현재 플레이어가 Skul이 아니면 리턴
-            if (playerController.player._name != "Skul")
+            if (playerController.player._name != "SkulData")
             {
                 return;
             }
             playerAni.runtimeAnimatorController = playerController.BeforeChangeRuntimeC;
         };
+
         // SkillA를 썼을 경우 자신의 해골을 날려 SkulHeadless로 런타임애니컨트롤러를 변경하기 위한 초기화
         SkulHeadless = Resources.Load("2.Animations/PlayerAni/SkulHeadless/SkulHeadless") as RuntimeAnimatorController;
         playerController = gameObject.GetComponent<PlayerController>();
@@ -37,17 +39,17 @@ public class Skul : Player
         Debug.Log("Skul");
     }
 
-    private void SkulAttackA()
+    public void SkulAttackA()
     {
         AttackAandB();
     }
 
-    private void SkulAttackB()
+    public void SkulAttackB()
     {
         AttackAandB();
     }
 
-    private void SkulJumpAttack()
+    public void SkulJumpAttack()
     {
         AttackAandB();
     }
@@ -107,27 +109,5 @@ public class Skul : Player
             Destroy(skillAObj);
         }
     }
-
-    //public override void SkillA()
-    //{
-    //    Debug.Log("use SkillA?");
-    //    playerAni.SetBool("isSkillA", true);
-    //    skillAObj = Instantiate(Resources.Load("0.Prefabs/SkulSkillAEffect") as GameObject);
-    //    skillAObj.GetComponent<SkulSkillA>().Init(this);
-    //    playerAni.runtimeAnimatorController = SkulHeadless;
-    //}
-
-    //public override void SkillB()
-    //{
-    //    if (skillAObj != null)
-    //    {
-    //        Debug.Log("use SkillB?");
-
-    //        playerController.player.transform.position = skillAObj.transform.position;
-    //        playerController.player.playerAni.runtimeAnimatorController = playerController.BeforeChangeRuntimeC;
-    //        Destroy(skillAObj);
-    //    }
-
-    //}
 
 }

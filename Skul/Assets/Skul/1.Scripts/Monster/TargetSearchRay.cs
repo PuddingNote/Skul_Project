@@ -5,8 +5,8 @@ using UnityEngine;
 public class TargetSearchRay : MonoBehaviour
 {
     MonsterController monsterController;
-    [HideInInspector]
-    public Collider2D hit;
+
+    [HideInInspector] public Collider2D hit;
 
     void Start()
     {

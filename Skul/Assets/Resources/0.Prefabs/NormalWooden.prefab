@@ -198,6 +198,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monster: {fileID: 0}
   enumState: 0
+  currentHp: 0
 --- !u!114 &5242169643467783177
 MonoBehaviour:
   m_ObjectHideFlags: 0

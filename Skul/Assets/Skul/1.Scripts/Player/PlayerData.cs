@@ -43,10 +43,10 @@ public class PlayerData : ScriptableObject
     public float GroundRayLength { get { return groundRayLength; } }
 
     [SerializeField]
-    private float skillACool;                                   // 스킬A 쿨다운
+    private float skillACool;                                   // 스킬A 쿨타임
     public float SkillACool { get { return skillACool; } }
 
     [SerializeField]
-    private float skillBCool;                                   // 스킬B 쿨다운
+    private float skillBCool;                                   // 스킬B 쿨타임
     public float SkillBCool { get { return skillBCool; } }
 }

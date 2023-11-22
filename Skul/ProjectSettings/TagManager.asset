@@ -71,3 +71,9 @@ TagManager:
   - name: UI
     uniqueID: 4200100135
     locked: 0
+  - name: PlayerEffect
+    uniqueID: 3453812433
+    locked: 0
+  - name: EnemyEffect
+    uniqueID: 3652405459
+    locked: 0

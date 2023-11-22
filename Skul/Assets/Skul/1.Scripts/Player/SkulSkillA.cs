@@ -6,12 +6,12 @@ public class SkulSkillA : MonoBehaviour
 {
     private Rigidbody2D skillA_Rb;
     private Animator skillA_Ani;
-    private Skul parentObj;             // 부모오브젝트를 찾기위한 변수
+    public Skul parentObj;              // 부모오브젝트를 찾기위한 변수
 
     private Vector3 startVector;        // 스킬 시작위치
     private float speed = 7f;           // 스킬 속도
     private float range = 15f;          // 스킬 사거리
-    private float direction;            // 스킬 이동 방향
+    public float direction;             // 스킬 이동 방향
     private float originalGravity;      // 날아가는도중 중력영향을 안받게하기위한 변수
     private bool isHit = false;         // 스킬이 Hit했는지
 
@@ -57,6 +57,7 @@ public class SkulSkillA : MonoBehaviour
         RaycastHit2D hit = Physics2D.CircleCast(transform.position, 0.1f, Vector2.zero, 0f, LayerMask.GetMask(tagetObj));
         if (hit.collider != null)
         {
+            // 적을 때렸을때
             if (tagetObj == GData.ENEMY_LAYER_MASK)
             {
                 int skillDamage = 20;
@@ -73,14 +74,15 @@ public class SkulSkillA : MonoBehaviour
                 GameObject hitEffect = Instantiate(Resources.Load("0.Prefabs/HitEffect") as GameObject);
                 hitEffect.transform.position = hit.collider.transform.position;
             }
+            // 플레이어가 주웠을때
             if (tagetObj == GData.PLAYER_LAYER_MASK)
             {
                 PlayerController playerController = hit.collider.gameObject?.GetComponent<PlayerController>();
-                if (playerController.player._name == "Skul")
+                if (playerController.player._name == "SkulData")
                 {
                     playerController.player.playerAni.runtimeAnimatorController = playerController.BeforeChangeRuntimeC;
 
-                    // 해골습득시 런타임애니메이션컨트롤러가 변경되므로 상태 초기화
+                    // 머리 습득시 런타임애니메이션컨트롤러가 변경되므로 상태 초기화
                     IPlayerState nextState = new PlayerIdle();
                     playerController.pStateMachine.onChangeState?.Invoke(nextState);
 
@@ -130,7 +132,6 @@ public class SkulSkillA : MonoBehaviour
         parentObj.onHeadBack?.Invoke();
 
         Destroy(gameObject);
-        Debug.Log("해골 파괴");
     }
 
 }

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3583312399405250916}
   - component: {fileID: 7424116582810046210}
   - component: {fileID: 7746159279384535168}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: JumpEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1708474697068417618}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.332118, y: 0.9337413, z: 0}
+  m_LocalPosition: {x: 0, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

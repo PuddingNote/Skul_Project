@@ -10,7 +10,7 @@ public class PlayerIdle : IPlayerState
     {
         this.pController = _pController;
         pController.enumState = PlayerController.PlayerState.IDLE;
-        Debug.Log(pController.enumState);
+        //Debug.Log(pController.enumState);
     }
 
     public void StateUpdate()

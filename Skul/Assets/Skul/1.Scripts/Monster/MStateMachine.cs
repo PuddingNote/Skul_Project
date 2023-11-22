@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StateMachine
+public class MStateMachine
 {
     MonsterController mController;
 
@@ -13,7 +13,7 @@ public class StateMachine
         private set;
     }
 
-    public StateMachine(IMonsterState defaultState, MonsterController _mController)
+    public MStateMachine(IMonsterState defaultState, MonsterController _mController)
     {
         currentState = defaultState;     // 초기상태 설정
         mController = _mController;      // MonsterController 참조

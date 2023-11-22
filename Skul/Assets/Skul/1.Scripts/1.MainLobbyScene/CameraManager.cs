@@ -10,7 +10,7 @@ public class CameraManager : MonoBehaviour
 
     void Awake()
     {
-        Screen.SetResolution(setWidth, setHeight, false);   // 화면 해상도 설정 Screen.SetResolution(너비, 높이, 전체 화면 여부)
+        Screen.SetResolution(setWidth, setHeight, true);   // 화면 해상도 설정 Screen.SetResolution(너비, 높이, 전체 화면 여부)
     }
     
 }

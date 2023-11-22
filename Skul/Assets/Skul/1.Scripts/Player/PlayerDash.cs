@@ -9,12 +9,14 @@ public class PlayerDash : IPlayerState
     private float dashTime = 0.3f;          // 대쉬 지속 시간
     private int dashCount = 0;              // 2단 대쉬 변수
     private float dashCooldown = 1f;        // 대쉬 쿨다운
+    private GameObject dashEffect;          // 대쉬 이펙트
 
     public void StateEnter(PlayerController _pController)
     {
         this.pController = _pController;
         pController.enumState = PlayerController.PlayerState.DASH;
-        Debug.Log(pController.enumState);
+        dashEffect = pController.gameObject.FindChildObj("DashEffect");
+        //Debug.Log(pController.enumState);
         pController.CoroutineDeligate(Dash());
     }
 
@@ -33,21 +35,14 @@ public class PlayerDash : IPlayerState
         pController.player.playerAni.SetBool("isFall", false);
     }
 
-    //private void UseDash()
-    //{
-    //    if (Input.GetKeyDown(KeyCode.Z) && pController.canDash == true)
-    //    {
-    //        pController.CoroutineDeligate(Dash());
-    //    }
-    //}
-
     // 대쉬하는 코루틴
     IEnumerator Dash()
     {
         // 플레이어의 Hit상태를 bool값으로 체크해 무적상태 구현
         pController.isHit = true;
-        
+
         //Debug.Log($"대쉬시작");
+        dashEffect.SetActive(true);
         pController.canDash = false;
         pController.player.playerAni.SetBool("isDash", true);
         dashCount += 1;
@@ -61,8 +56,8 @@ public class PlayerDash : IPlayerState
         // 대쉬가 끝나면 Gravity 원래 값으로 되돌림
         pController.player.playerRb.gravityScale = originalGravity;
         pController.player.playerAni.SetBool("isDash", false);
-
         pController.isHit = false;
+        dashEffect.SetActive(false);
 
         IPlayerState lastState;
 

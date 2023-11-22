@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class PStateMachine
+public class PStateMachine// : MonoBehaviour
 {
     private PlayerController pController;
     public Action<IPlayerState> onChangeState;
 
+    // 읽기 전용
     public IPlayerState currentState
     {
         get;
@@ -19,6 +20,10 @@ public class PStateMachine
     {
         // 초기화시 Action에 SetState함수 저장
         onChangeState += SetState;
+        //onChangeState += (state) =>
+        //{
+        //    SetState(state);
+        //};
         currentState = defaultState;
 
         //Debug.Log(currentState);

@@ -34,27 +34,4 @@ public class Player : MonoBehaviour
         this.playerCollider.size                        = new Vector2(data.ColliderSizeX, data.ColliderSizeY);
     }
 
-    //// 플레이어 AttackA
-    //public virtual void AttackA()
-    //{
-        
-    //}
-
-    //// 플레이어 AttackB
-    //public virtual void AttackB()
-    //{
-        
-    //}
-
-    //// 플레이어 SkillA
-    //public virtual void SkillA()
-    //{
-        
-    //}
-
-    //// 플레이어 SkillB
-    //public virtual void SkillB()
-    //{
-        
-    //}
 }

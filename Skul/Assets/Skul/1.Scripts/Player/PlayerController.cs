@@ -18,11 +18,10 @@ public class PlayerController : MonoBehaviour
 
     public PlayerGroundCheck isGroundRay;
     public PlayerState enumState = PlayerState.IDLE;
-    //private PStateMachine _pStateMachine;
 
     public PStateMachine pStateMachine { get; private set; }
     private Dictionary<PlayerState, IPlayerState> dictionaryState = new Dictionary<PlayerState, IPlayerState>();
-    public RuntimeAnimatorController BeforeChangeRuntimeC;
+    public RuntimeAnimatorController BeforeChangeRuntimeC;  // SkulHeadless를 사용하기위해
     public List<Player> playerSkulList;         // 플레이어가 사용할 수 있는 Skul의 List
     private SpriteRenderer playerSprite;
 
@@ -32,10 +31,10 @@ public class PlayerController : MonoBehaviour
     public int playerHp;
     public int playerMaxHp = 100;
     public int currentHp;
-    public bool canDash = true;         // 대쉬 사용가능 체크
+    public bool canDash = true;             // 대쉬 사용가능 체크
     public bool isGetSkulSkillA = false;
-    public bool isHit = false;          // 피격체크
-    public bool isDead = false;         // 사망체크
+    public bool isHit = false;              // 피격체크
+    public bool isDead = false;             // 사망체크
 
     public float swapCoolDown = 5f;
     public float skillACoolDown;
@@ -43,26 +42,30 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        possibleSkul = gameObject.AddComponent<Skul>();
+        playerHp = playerMaxHp;
         playerSkulList = new List<Player>();
-        playerSkulList.Add(possibleSkul);
         playerSprite = gameObject.GetComponent<SpriteRenderer>();
+
+        possibleSkul = gameObject.AddComponent<Skul>();
+        playerSkulList.Add(possibleSkul);
 
         // 기본 스컬의 런타임애니컨트롤러를 저장 -> 스킬A, B사용시 런타임애니컨트롤러를 변경하는 로직
         BeforeChangeRuntimeC = Resources.Load("2.Animations/PlayerAni/Skul/Skul") as RuntimeAnimatorController;
 
         isGroundRay = gameObject.GetComponent<PlayerGroundCheck>();
-        playerHp = playerMaxHp;
+
         currentHp = playerHp;
+        skillACoolDown = player.skillACool;
+        skillBCoolDown = player.skillBCool;
 
         IPlayerState idle = new PlayerIdle();
         IPlayerState move = new PlayerMove();
         IPlayerState jump = new PlayerJump();
         IPlayerState dash = new PlayerDash();
         IPlayerState attack = new PlayerAttack();
-        IPlayerState dead = new PlayerDead();
         IPlayerState skillA = new PlayerSkillA();
         IPlayerState skillB = new PlayerSkillB();
+        IPlayerState dead = new PlayerDead();
 
         dictionaryState.Add(PlayerState.IDLE, idle);
         dictionaryState.Add(PlayerState.MOVE, move);
@@ -105,7 +108,7 @@ public class PlayerController : MonoBehaviour
         // 플레이어 Hp가 0보다 작거나 같으면 Dead
         if (playerHp <= 0)
         {
-            // 플레이어의 Hit상태를 bool값으로 체크해 무적상태 구현
+            // 플레이어의 Hit상태를 체크해 무적상태 구현
             isDead = true;
             playerHp = 0;
             ChangeState(PlayerState.DEAD);
@@ -177,7 +180,7 @@ public class PlayerController : MonoBehaviour
             ChangePlayer();
         }
 
-        // Jump상태가 아닐때 Velocity.y값이 -1보다 작으면 낙하시작 (점프안하고 떨어질때)
+        // 점프안하고 떨어질때
         if (player.playerRb.velocity.y < -1
         && ((enumState == PlayerState.IDLE || enumState == PlayerState.MOVE)
         || (enumState != PlayerState.JUMP && player.playerAni.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)))
@@ -204,10 +207,10 @@ public class PlayerController : MonoBehaviour
         StartCoroutine(SwapCoolDown());
     }
 
-    // 캐릭터 Swap쿨다운 적용 코루틴 함수
+    // 캐릭터 Swap쿨타임 적용 코루틴 함수
     IEnumerator SwapCoolDown()
     {
-        // 스왑쿨다운 5초 설정
+        // 스왑쿨타임 5초 설정
         for (int i = 0; i < 50; i++)
         {
             float tick = 0.1f;
@@ -217,49 +220,47 @@ public class PlayerController : MonoBehaviour
         swapCoolDown = 5f;
     }
 
-    // 스킬A 쿨다운 코루틴함수
-    private IEnumerator SkillACoolDown()
+    // 스킬A 쿨타임 코루틴함수
+    IEnumerator SkillACoolDown()
     {
         float skillACool = player.skillACool;
+
         for (int i = 0; i < skillACool * 10; i++)
         {
-            var tick = 0.1f;
+            float tick = 0.1f;
+
             if (isGetSkulSkillA == true)
             {
                 // Skull의 SkillA사용후 스컬헤드를 습득했을시 쿨초기화
                 skillACoolDown = player.skillACool;
                 isGetSkulSkillA = false;
-                //UIManager.Instance.skillACoolDown = skillACoolDown;
                 yield break;
             }
             if (skillACool != player.skillACool)
             {
                 skillACoolDown = player.skillACool;
-                //UIManager.Instance.skillACoolDown = skillACoolDown;
                 yield break;
             }
             skillACoolDown -= tick;
-            //UIManager.Instance.skillACoolDown = skillACoolDown;
             yield return new WaitForSeconds(tick);
         }
         skillACoolDown = player.skillACool;
     }
 
     // 스킬B 쿨다운 코루틴함수
-    private IEnumerator SkillBCoolDown()
+    IEnumerator SkillBCoolDown()
     {
         float skillBCool = player.skillBCool;
+
         for (int i = 0; i < skillBCool * 10; i++)
         {
-            var tick = 0.1f;
+            float tick = 0.1f;
             if (skillBCool != player.skillBCool)
             {
                 skillBCoolDown = player.skillBCool;
-                //UIManager.Instance.skillBCoolDown = skillBCoolDown;
                 yield break;
             }
             skillBCoolDown -= tick;
-            //UIManager.Instance.skillBCoolDown = skillBCoolDown;
             yield return new WaitForSeconds(tick);
         }
         skillBCoolDown = player.skillBCool;
@@ -291,11 +292,4 @@ public class PlayerController : MonoBehaviour
         isHit = false;
     } //HitPlayer
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        //if (collision.gameObject.tag == "Ground")
-        //{
-        //    isGround = true;
-        //}
-    }
 }

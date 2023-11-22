@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// 게임 데이터 & 상수 관리
+// Global 데이터 관리
 public static partial class GData
 {
     public const string TITLE_SCENE_NAME                = "0.TitleScene";
