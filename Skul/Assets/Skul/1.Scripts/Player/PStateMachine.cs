@@ -3,20 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class PStateMachine// : MonoBehaviour
+public class PStateMachine
 {
-    public Action<IPlayerState> onChangeState;
     private PlayerController pController;
-    public IPlayerState lastState;
+    public Action<IPlayerState> onChangeState;
 
     public IPlayerState currentState
-    { 
+    {
         get;
         private set;
     }
 
+    // 생성자 초기화시 기본상태세팅
     public PStateMachine(IPlayerState defaultState, PlayerController _pController)
     {
+        // 초기화시 Action에 SetState함수 저장
         onChangeState += SetState;
         currentState = defaultState;
 
@@ -26,13 +27,14 @@ public class PStateMachine// : MonoBehaviour
         SetState(currentState);
     }
 
+    // 입력받은 상태를 체크하여 상태전환하는 함수
     public void SetState(IPlayerState state)
     {
+        // 전과 동일하면 리턴
         if (currentState == state)
         {
             return;
         }
-        lastState = currentState;
         currentState.StateExit();
         currentState = state;
         currentState.StateEnter(pController);

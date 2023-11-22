@@ -27,10 +27,10 @@ public class PlayerJump : IPlayerState
 
     public void StateUpdate()
     {
-        JumpEffectOff();
+        //JumpEffectOff();
+        PlayerFall();
         JumpAndMove();
         Jump();
-        PlayerFall();
 
         //if (pController.isGround && (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.LeftArrow)))
         //{
@@ -58,7 +58,9 @@ public class PlayerJump : IPlayerState
     {
         // 공중에 떠 있으면 시작
         // 입력받은 키 방향으로 이동하면서 바라보는 처리
-        if ((Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.LeftArrow)) && pController.isGroundRay.hit.collider == null)
+        if ((Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.LeftArrow))
+            //&& pController.isGroundRay.hit.collider == null
+            )
         {
             if (Input.GetKey(KeyCode.RightArrow))
             {
@@ -81,6 +83,7 @@ public class PlayerJump : IPlayerState
     {
         if (pController.player.playerRb.velocity.y < -1)
         {
+            pController.player.playerAni.SetBool("isJump", false);
             pController.player.playerAni.SetBool("isFall", true);
         }
 
@@ -98,6 +101,7 @@ public class PlayerJump : IPlayerState
 
                 jumpEffect.SetActive(true);
             }
+            pController.player.playerAni.SetBool("isFall", false);
             pController.player.playerAni.SetBool("isJump", true);
             pController.player.playerRb.velocity = pController.player.transform.up * jumpForce;
             jumpCount += 1;
@@ -105,12 +109,11 @@ public class PlayerJump : IPlayerState
 
     }
 
-    private void JumpEffectOff()
-    {
-        if (jumpEffect.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)
-        {
-            jumpEffect.SetActive(false);
-        }
-
-    }
+    //private void JumpEffectOff()
+    //{
+    //    if (jumpEffect.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)
+    //    {
+    //        jumpEffect.SetActive(false);
+    //    }
+    //}
 }

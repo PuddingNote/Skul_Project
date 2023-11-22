@@ -15,8 +15,15 @@ public class Skul : Player
     void OnEnable()
     {
         // Action에 SkillA를 써서 런타임컨트롤러가 SkulHeadless로 바뀌고 해골을 줍지 못했을 경우 처리하기 위한 내용 저장
-        onHeadBack += OnHeadBackHandler;
-
+        onHeadBack += () =>
+        {
+            // 현재 플레이어가 Skul이 아니면 리턴
+            if (playerController.player._name != "Skul")
+            {
+                return;
+            }
+            playerAni.runtimeAnimatorController = playerController.BeforeChangeRuntimeC;
+        };
         // SkillA를 썼을 경우 자신의 해골을 날려 SkulHeadless로 런타임애니컨트롤러를 변경하기 위한 초기화
         SkulHeadless = Resources.Load("2.Animations/PlayerAni/SkulHeadless/SkulHeadless") as RuntimeAnimatorController;
         playerController = gameObject.GetComponent<PlayerController>();
@@ -30,17 +37,17 @@ public class Skul : Player
         Debug.Log("Skul");
     }
 
-    void OnHeadBackHandler()
-    {
-        playerAni.runtimeAnimatorController = playerController.BeforeChangeRuntimeC;
-    }
-
-    public override void AttackA()
+    private void SkulAttackA()
     {
         AttackAandB();
     }
 
-    public override void AttackB()
+    private void SkulAttackB()
+    {
+        AttackAandB();
+    }
+
+    private void SkulJumpAttack()
     {
         AttackAandB();
     }
@@ -56,33 +63,71 @@ public class Skul : Player
         {
             if (hit.collider.tag == GData.ENEMY_LAYER_MASK)
             {
+                int damage = playerData.AttackDamage;
                 Monster monster = hit.collider.gameObject.GetComponent<Monster>();
-                monster.hp -= playerData.AttackDamage;
-                Debug.Log($"{hit.collider.name}={monster.hp}/{monster.maxHp}");
+                if (monster != null)
+                {
+                    monster.hp -= damage;
+                    GameManager.Instance.totalDamage += damage;
+                    Debug.Log($"{hit.collider.name}={monster.hp}/{monster.maxHp}");
+                }
             }
+            GameObject hitEffect = Instantiate(Resources.Load("0.Prefabs/HitEffect") as GameObject);
+            hitEffect.transform.position = hit.transform.position - new Vector3(0f, 0.5f, 0f);
+            hitEffect.transform.localScale = new Vector2(playerController.player.transform.localScale.x, hitEffect.transform.localScale.y);
         }
     }
 
-    public override void SkillA()
+    public void SkulSkillA()
     {
-        Debug.Log("use SkillA?");
-        playerAni.SetBool("isSkillA", true);
         skillAObj = Instantiate(Resources.Load("0.Prefabs/SkulSkillAEffect") as GameObject);
         skillAObj.GetComponent<SkulSkillA>().Init(this);
         playerAni.runtimeAnimatorController = SkulHeadless;
+
+        // 입력받고있던 애니메이션 bool값이 변경된 헤드리스 런타임컨트롤러로 바뀌지않아 강제로 상태를 초기화시켜
+        // 헤드리스 런타임컨트롤러가 유저입력을 받을 수 있게 처리함
+        IPlayerState nextState = new PlayerIdle();
+        playerController.pStateMachine.onChangeState.Invoke(nextState);
     }
 
-    public override void SkillB()
+    public void SkulSkillB()
     {
+        // 스컬헤드위치로 순간이동, 헤드리스상태 벗어남
+        playerController.player.transform.position = skillAObj.transform.position;
+        playerController.player.playerAni.runtimeAnimatorController = playerController.BeforeChangeRuntimeC;
+
+        // 입력받고있던 애니메이션 bool값이 변경된 스컬 런타임컨트롤러로 바뀌지않아 강제로 상태를 초기화시켜
+        // 스컬 런타임컨트롤러가 유저입력을 받을 수 있게 처리함
+        IPlayerState nextState = new PlayerIdle();
+        playerController.pStateMachine.onChangeState.Invoke(nextState);
+
+        // 스컬헤드가 존재하면 파괴
         if (skillAObj != null)
         {
-            Debug.Log("use SkillB?");
-
-            playerController.player.transform.position = skillAObj.transform.position;
-            playerController.player.playerAni.runtimeAnimatorController = playerController.BeforeChangeRuntimeC;
             Destroy(skillAObj);
         }
-
     }
+
+    //public override void SkillA()
+    //{
+    //    Debug.Log("use SkillA?");
+    //    playerAni.SetBool("isSkillA", true);
+    //    skillAObj = Instantiate(Resources.Load("0.Prefabs/SkulSkillAEffect") as GameObject);
+    //    skillAObj.GetComponent<SkulSkillA>().Init(this);
+    //    playerAni.runtimeAnimatorController = SkulHeadless;
+    //}
+
+    //public override void SkillB()
+    //{
+    //    if (skillAObj != null)
+    //    {
+    //        Debug.Log("use SkillB?");
+
+    //        playerController.player.transform.position = skillAObj.transform.position;
+    //        playerController.player.playerAni.runtimeAnimatorController = playerController.BeforeChangeRuntimeC;
+    //        Destroy(skillAObj);
+    //    }
+
+    //}
 
 }

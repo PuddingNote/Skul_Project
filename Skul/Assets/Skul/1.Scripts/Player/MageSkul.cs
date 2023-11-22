@@ -23,31 +23,31 @@ public class MageSkul : Player
         Debug.Log("MageSkul");
     }
 
-    public override void AttackA()
-    {
-        AttackAandB();
-    }
+    //public override void AttackA()
+    //{
+    //    AttackAandB();
+    //}
 
-    public override void AttackB()
-    {
-        AttackAandB();
-    }
+    //public override void AttackB()
+    //{
+    //    AttackAandB();
+    //}
 
-    // AttackA, B의 히트 판정 처리하는 함수
-    private void AttackAandB()
-    {
-        Debug.Log("Attack");
-    }
+    //// AttackA, B의 히트 판정 처리하는 함수
+    //private void AttackAandB()
+    //{
+    //    Debug.Log("Attack");
+    //}
 
-    public override void SkillA()
-    {
-        Debug.Log("SkillA");
-    }
+    //public override void SkillA()
+    //{
+    //    Debug.Log("SkillA");
+    //}
 
-    public override void SkillB()
-    {
-        Debug.Log("SkillB");
-    }
+    //public override void SkillB()
+    //{
+    //    Debug.Log("SkillB");
+    //}
 
     //public PlayerData playerData;
     //private PlayerController playerController;

@@ -15,11 +15,12 @@ public class PlayerDash : IPlayerState
         this.pController = _pController;
         pController.enumState = PlayerController.PlayerState.DASH;
         Debug.Log(pController.enumState);
+        pController.CoroutineDeligate(Dash());
     }
 
     public void StateUpdate()
     {
-        UseDash();
+        //UseDash();
     }
 
     public void StateExit()
@@ -28,31 +29,24 @@ public class PlayerDash : IPlayerState
         // 대쉬를 점프로 캔슬했을 때 velocity가 zero가되면 바로 낙하 하는걸 방지
         // 대쉬 상태를 나갈 때 플레이어의 velocity 초기화
         pController.player.playerRb.velocity = Vector2.zero;
+        pController.player.playerAni.SetBool("isDash", false);
         pController.player.playerAni.SetBool("isFall", false);
     }
 
-    private void UseDash()
-    {
-        if (Input.GetKeyDown(KeyCode.Z) && pController.canDash == true)
-        {
-            pController.CoroutineDeligate(Dash());
-        }
-    }
+    //private void UseDash()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.Z) && pController.canDash == true)
+    //    {
+    //        pController.CoroutineDeligate(Dash());
+    //    }
+    //}
 
     // 대쉬하는 코루틴
     IEnumerator Dash()
     {
-        IPlayerState lastState;
-
-        // 대쉬전 상태를 Action에 저장
-        if (pController.isGroundRay.hit.collider != null)
-        {
-            lastState = new PlayerIdle();
-        }
-        else
-        {
-            lastState = new PlayerJump();
-        }
+        // 플레이어의 Hit상태를 bool값으로 체크해 무적상태 구현
+        pController.isHit = true;
+        
         //Debug.Log($"대쉬시작");
         pController.canDash = false;
         pController.player.playerAni.SetBool("isDash", true);
@@ -68,11 +62,29 @@ public class PlayerDash : IPlayerState
         pController.player.playerRb.gravityScale = originalGravity;
         pController.player.playerAni.SetBool("isDash", false);
 
-        // 대쉬가 끝나면 강제로 이전 상태로 전환
-        //pController.pStateMachine.onChangeState?.Invoke(lastState);
-        if (pController.pStateMachine.onChangeState != null)
+        pController.isHit = false;
+
+        IPlayerState lastState;
+
+        // 대쉬전 상태를 Action에 저장
+        if (pController.isGroundRay.hit.collider != null)
         {
-            pController.pStateMachine.onChangeState(lastState);
+            lastState = new PlayerIdle();
+        }
+        else
+        {
+            lastState = new PlayerJump();
+        }
+
+        // 대쉬가 끝나면 강제로 이전 상태로 전환하는 ActionEvent => 대쉬 상태 탈출
+        // 점프로 대쉬를 캔슬할 경우 Action실행을 하지 않기 위해 예외처리
+        if (pController.enumState == PlayerController.PlayerState.DASH)
+        {
+            //pController.pStateMachine.onChangeState?.Invoke(lastState);
+            if (pController.pStateMachine.onChangeState != null)
+            {
+                pController.pStateMachine.onChangeState(lastState);
+            }
         }
 
         // 2단 대쉬

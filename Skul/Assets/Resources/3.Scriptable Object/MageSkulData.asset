@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: MageSkulData
   m_EditorClassIdentifier: 
   playerName: MageSkul
+  skulSprite: {fileID: 0}
+  skulIndex: 1
   attackDamage: 10
   moveSpeed: 5
   controller: {fileID: 9100000, guid: 711951c01ce20db419166c31259591ef, type: 2}

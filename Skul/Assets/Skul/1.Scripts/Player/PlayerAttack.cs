@@ -5,11 +5,14 @@ using UnityEngine;
 public class PlayerAttack : IPlayerState
 {
     private PlayerController pController;
+    private Vector3 direction;          // 이동할 방향 변수
+    private Vector3 localScale;         // 방향전환 변수
 
     public void StateEnter(PlayerController _pController)
     {
         this.pController = _pController;
         pController.enumState = PlayerController.PlayerState.ATTACK;
+        localScale = pController.player.transform.localScale;
         Debug.Log(pController.enumState);
 
         if (pController.isGroundRay.hit.collider != null)
@@ -26,7 +29,8 @@ public class PlayerAttack : IPlayerState
 
     public void StateUpdate()
     {
-        ExitAttack();
+        ComboAttack();
+        ExitJumpAttack();
     }
 
     public void StateExit()
@@ -37,11 +41,49 @@ public class PlayerAttack : IPlayerState
         pController.player.playerAni.SetBool("isJumpAttack", false);
     }
 
+    // 연계공격
+    private void ComboAttack()
+    {
+        // 공격A 애니메이션 길이가 0.5 ~ 1 사이에 c키입력시 공격B로 연계
+        if (pController.player.playerAni.GetCurrentAnimatorStateInfo(0).IsName("AttackA")
+        && (pController.player.playerAni.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.5f
+        && pController.player.playerAni.GetCurrentAnimatorStateInfo(0).normalizedTime <= 1f))
+        {
+            if (Input.GetKeyDown(KeyCode.C))
+            {
+                pController.player.playerAni.SetBool("isAttackA", false);
+                pController.player.playerAni.SetBool("isAttackB", true);
+            }
+        }
+
+        // 공중공격 중에는 이동가능
+        if (pController.player.playerAni.GetCurrentAnimatorStateInfo(0).IsName("JumpAttack"))
+        {
+            if ((Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.LeftArrow)) 
+                && pController.isGroundRay.hit.collider == null)
+            {
+                if (Input.GetKey(KeyCode.RightArrow))
+                {
+                    localScale = new Vector3(1, localScale.y, localScale.z);
+                    direction = Vector3.right;
+                }
+                if (Input.GetKey(KeyCode.LeftArrow))
+                {
+                    localScale = new Vector3(-1, localScale.y, localScale.z);
+                    direction = Vector3.left;
+                }
+                pController.player.transform.localScale = localScale;
+                pController.player.transform.Translate(direction * pController.player.moveSpeed * Time.deltaTime);
+            }
+        }
+    }
+
     // 공중공격을 한 경우 다음 행동 정하는 함수
-    private void ExitAttack()
+    private void ExitJumpAttack()
     {
         // 공격 애니메이션이 끝나면 들어감
-        if (pController.player.playerAni.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)
+        if (pController.player.playerAni.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f
+            && pController.player.playerAni.GetCurrentAnimatorStateInfo(0).IsName("JumpAttack"))
         {
             IPlayerState nextState;
 

@@ -5026,16 +5026,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c8cff7e0d2ece649a2765a98cba0199, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  playerHp: 0
-  playerMaxHp: 100
-  isGround: 1
-  canDash: 1
   isGroundRay: {fileID: 0}
   enumState: 0
   BeforeChangeRuntimeC: {fileID: 0}
-  playerAni: {fileID: 0}
   playerSkulList: []
+  player: {fileID: 0}
+  playerHp: 0
+  playerMaxHp: 100
+  currentHp: 0
+  canDash: 1
+  isGetSkulSkillA: 0
+  isHit: 0
+  isDead: 0
+  swapCoolDown: 5
+  skillACoolDown: 0
+  skillBCoolDown: 0
 --- !u!95 &1129236270
 Animator:
   serializedVersion: 5
@@ -5382,16 +5387,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c8cff7e0d2ece649a2765a98cba0199, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  playerHp: 0
-  playerMaxHp: 100
-  isGround: 1
-  canDash: 1
   isGroundRay: {fileID: 0}
   enumState: 0
   BeforeChangeRuntimeC: {fileID: 0}
-  playerAni: {fileID: 0}
   playerSkulList: []
+  player: {fileID: 0}
+  playerHp: 0
+  playerMaxHp: 100
+  currentHp: 0
+  canDash: 1
+  isGetSkulSkillA: 0
+  isHit: 0
+  isDead: 0
+  swapCoolDown: 5
+  skillACoolDown: 0
+  skillBCoolDown: 0
 --- !u!114 &1267832497
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5960,16 +5970,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c8cff7e0d2ece649a2765a98cba0199, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  playerHp: 0
-  playerMaxHp: 100
-  isGround: 1
-  canDash: 1
   isGroundRay: {fileID: 0}
   enumState: 0
   BeforeChangeRuntimeC: {fileID: 0}
-  playerAni: {fileID: 0}
   playerSkulList: []
+  player: {fileID: 0}
+  playerHp: 0
+  playerMaxHp: 100
+  currentHp: 0
+  canDash: 1
+  isGetSkulSkillA: 0
+  isHit: 0
+  isDead: 0
+  swapCoolDown: 5
+  skillACoolDown: 0
+  skillBCoolDown: 0
 --- !u!95 &1461713951
 Animator:
   serializedVersion: 5

@@ -6,7 +6,7 @@ public class SkulSkillA : MonoBehaviour
 {
     private Rigidbody2D skillA_Rb;
     private Animator skillA_Ani;
-    private Skul parentObj;
+    private Skul parentObj;             // 부모오브젝트를 찾기위한 변수
 
     private Vector3 startVector;        // 스킬 시작위치
     private float speed = 7f;           // 스킬 속도
@@ -34,7 +34,7 @@ public class SkulSkillA : MonoBehaviour
     // 날아가는 도중 타겟을 감지하면 Hit처리 하는 함수
     private void DetectTarget()
     {
-        // Hit상태가되면 CircleCast 발동 못하게 리턴
+        // Hit상태가되면 LayerMask대상을 플레이어로 전환해 플레이어가 스컬헤드를 습득할 수 있도록 처리함
         string tagetObj;
 
         if (isHit == true)
@@ -59,15 +59,34 @@ public class SkulSkillA : MonoBehaviour
         {
             if (tagetObj == GData.ENEMY_LAYER_MASK)
             {
+                int skillDamage = 20;
                 MonsterController target = hit.collider.gameObject?.GetComponent<MonsterController>();
-                target.monster.hp -= 20;
-                Debug.Log($"스킬A공격 = {target.monster.hp}/{target.monster.maxHp}");
-                isHit = true;
+                if (target != null)
+                {
+                    target.monster.hp -= skillDamage;
+                    isHit = true;
+                    GameManager.Instance.totalDamage += skillDamage;
+                    float direction = hit.collider.transform.position.x - transform.position.x > 0 ? -1.5f : 1.5f;
+                    skillA_Rb.AddForce(new Vector2(direction, 3f), ForceMode2D.Impulse);
+                    Debug.Log($"스킬A공격 = {target.monster.hp}/{target.monster.maxHp}");
+                }
+                GameObject hitEffect = Instantiate(Resources.Load("0.Prefabs/HitEffect") as GameObject);
+                hitEffect.transform.position = hit.collider.transform.position;
             }
             if (tagetObj == GData.PLAYER_LAYER_MASK)
             {
                 PlayerController playerController = hit.collider.gameObject?.GetComponent<PlayerController>();
-                playerController.player.playerAni.runtimeAnimatorController = playerController.BeforeChangeRuntimeC;
+                if (playerController.player._name == "Skul")
+                {
+                    playerController.player.playerAni.runtimeAnimatorController = playerController.BeforeChangeRuntimeC;
+
+                    // 해골습득시 런타임애니메이션컨트롤러가 변경되므로 상태 초기화
+                    IPlayerState nextState = new PlayerIdle();
+                    playerController.pStateMachine.onChangeState?.Invoke(nextState);
+
+                    // 머리 습득시 SkillA 쿨 초기화
+                    playerController.isGetSkulSkillA = true;
+                }
                 Destroy(gameObject);
                 return;
             }
