@@ -38,6 +38,11 @@ public class GameSceneManager : MonoBehaviour
         }
     }
 
+    public void Update()
+    {
+        GetThisSceneName();
+    }
+
     // 현재 씬 이름 가져오기
     public string GetThisSceneName()
     {
@@ -49,6 +54,7 @@ public class GameSceneManager : MonoBehaviour
     public void LoadScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
+        //GetThisSceneName();
     }
 
 }

@@ -9,7 +9,7 @@ public class TitleAnyKeyClick : MonoBehaviour
 
     void Start()
     {
-
+        //GameSceneManager.Instance.GetThisSceneName();
     }
 
     void Update()
