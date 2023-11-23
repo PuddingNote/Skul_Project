@@ -20,10 +20,6 @@ public class PStateMachine// : MonoBehaviour
     {
         // 초기화시 Action에 SetState함수 저장
         onChangeState += SetState;
-        //onChangeState += (state) =>
-        //{
-        //    SetState(state);
-        //};
         currentState = defaultState;
 
         //Debug.Log(currentState);

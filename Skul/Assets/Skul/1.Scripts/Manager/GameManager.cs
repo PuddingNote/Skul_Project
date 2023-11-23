@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
     }
 
     // 싱글톤 패턴 적용
+    // 메모리 낭비 방지 & 중요 데이터 효율적 관리 & 씬 전환시 데이터 유지
     private void Awake()
     {
         if (instance == null)

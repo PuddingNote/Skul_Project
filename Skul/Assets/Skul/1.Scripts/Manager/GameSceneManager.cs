@@ -21,7 +21,6 @@ public class GameSceneManager : MonoBehaviour
         }
     }
 
-    // ½Ì±ÛÅæ ÆĞÅÏ Àû¿ë
     private void Awake()
     {
         if (instance == null)

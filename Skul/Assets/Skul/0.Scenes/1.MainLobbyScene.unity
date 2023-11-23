@@ -4149,6 +4149,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NormalWooden (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5242169643467783219, guid: 72f3dab6869a59a4795e19ae2eeff4f9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5242169643467783220, guid: 72f3dab6869a59a4795e19ae2eeff4f9, type: 3}
       propertyPath: m_RootOrder
       value: 5
