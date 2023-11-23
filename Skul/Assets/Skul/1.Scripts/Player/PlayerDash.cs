@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerDash : IPlayerState
 {
     private PlayerController pController;
+
     private float dashForce = 10f;          // 대쉬속도
     private float dashTime = 0.3f;          // 대쉬 지속 시간
     private int dashCount = 0;              // 2단 대쉬 변수
@@ -17,7 +18,9 @@ public class PlayerDash : IPlayerState
         pController.enumState = PlayerController.PlayerState.DASH;
         dashEffect = pController.gameObject.FindChildObj("DashEffect");
         //Debug.Log(pController.enumState);
+
         pController.CoroutineDeligate(Dash());
+        //pController.StartCoroutine(Dash());
     }
 
     public void StateUpdate()

@@ -266,30 +266,38 @@ public class PlayerController : MonoBehaviour
         skillBCoolDown = player.skillBCool;
     }
 
-    // interface를 상속받은 클래스는 MonoBehaviour를 상속 받지 못해서 코루틴을 대신 실행시켜줄 함수
+    // interface를 상속받은 클래스는 MonoBehaviour를 상속받지 않아서 코루틴을 대신 실행시켜줄 함수가 필요해서 만들었는데
+    // 그냥 해보니 된다 ?? 왜 되는거지 (PlayerDash Script)
     public void CoroutineDeligate(IEnumerator func)
     {
         StartCoroutine(func);
     }
 
-    // 몬스터에게 피격당할 시 실행하는 코루틴함수
+    // 몬스터에게 피격당했을때 실행하는 코루틴함수 (무적상태적용)
     IEnumerator HitPlayer()
     {
-        // 스프라이트 컬러의 알파값을 바꿔 깜빡거리게 구현
+        int hitTime = 0;
         Color original = playerSprite.color;
-        playerSprite.color = new Color(255f, 255f, 255f, 0.3f);
-        yield return new WaitForSeconds(0.2f);
-        playerSprite.color = new Color(255f, 255f, 255f, 1f);
-        yield return new WaitForSeconds(0.2f);
-        playerSprite.color = new Color(255f, 255f, 255f, 0.3f);
-        yield return new WaitForSeconds(0.2f);
-        playerSprite.color = new Color(255f, 255f, 255f, 1f);
-        yield return new WaitForSeconds(0.2f);
-        playerSprite.color = new Color(255f, 255f, 255f, 0.3f);
-        yield return new WaitForSeconds(0.2f);
-        playerSprite.color = new Color(255f, 255f, 255f, 1f);
+
+        while (hitTime < 10)
+        {
+            if (hitTime % 2 == 0)
+            {
+                playerSprite.color = new Color(original.r, original.g, original.b, 0.3f);
+            }
+            else
+            {
+                playerSprite.color = new Color(original.r, original.g, original.b, 1f);
+            }
+            yield return new WaitForSeconds(0.2f);
+
+            hitTime++;
+        }
+
         playerSprite.color = original;
         isHit = false;
-    } //HitPlayer
+
+        yield return null;
+    }
 
 }

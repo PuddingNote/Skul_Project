@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMove : IPlayerState
 {
     private PlayerController pController;
+
     private Vector3 localScale;         // 바라보는방향 전환 변수
     private Vector3 direction;
 

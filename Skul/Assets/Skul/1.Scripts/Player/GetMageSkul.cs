@@ -37,12 +37,11 @@ public class GetMageSkul : MonoBehaviour
                 return;
             }
 
-            // 플레이어가 MageSkul을 획득하는 로직(컴포넌트로 스크립트를 붙임)
             // 현재 활성화되어있는 Skul스크립트를 비활성화
             _player.gameObject.GetComponent<Skul>().enabled = !(_player.gameObject.GetComponent<Skul>().enabled);
             if (GetComponent<MageSkul>() == null)
             {
-                // MageSkul을 가지고 있지 않으면 AddComponent()
+                // MageSkul을 가지고 있지 않으면 스컬리스트에 추가
                 _player.gameObject.GetComponent<PlayerController>().playerSkulList.Add(_player.gameObject.AddComponent<MageSkul>());
                 return;
             }

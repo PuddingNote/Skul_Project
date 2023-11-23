@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerAttack : IPlayerState
 {
     private PlayerController pController;
+
     private Vector3 direction;          // 이동할 방향 변수
     private Vector3 localScale;         // 방향전환 변수
 

@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerJump : IPlayerState
 {
     private PlayerController pController;
+
     private int jumpCount = 0;                  // 2단 점프 변수
     private float jumpForce = 7f;               // 점프 높이 변수
     private Vector3 direction;                  // 이동 방향 변수

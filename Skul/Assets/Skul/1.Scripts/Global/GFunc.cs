@@ -42,4 +42,20 @@ public static partial class GFunc
         return searchResult;
     }
 
+    // 해당 Object및 모든 하위 자식오브젝트들을 재귀적으로 활성화하는 함수
+    public static void SetActiveRecursively(GameObject obj, bool state)
+    {
+        if (obj == null)
+        {
+            return;
+        }
+
+        obj.SetActive(state);
+
+        foreach (Transform child in obj.transform)
+        {
+            SetActiveRecursively(child.gameObject, state);
+        }
+    }
+
 }
