@@ -124,7 +124,9 @@ public class PlayerController : MonoBehaviour
 
         if ((Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.LeftArrow)) && isGroundRay.hit.collider != null
             && enumState != PlayerState.DASH 
-            && (enumState == PlayerState.IDLE || (enumState != PlayerState.MOVE && player.playerAni.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)))
+            && (enumState == PlayerState.IDLE 
+            || (enumState != PlayerState.MOVE
+            && player.playerAni.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)))
         {
             ChangeState(PlayerState.MOVE);
         }
@@ -147,7 +149,9 @@ public class PlayerController : MonoBehaviour
         if (isGroundRay.hit.collider != null
         && (Input.GetKey(KeyCode.RightArrow) == false && Input.GetKey(KeyCode.LeftArrow) == false)
         && enumState != PlayerState.DASH
-        && (enumState == PlayerState.MOVE || (enumState != PlayerState.IDLE && player.playerAni.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)))
+        && (enumState == PlayerState.MOVE 
+        || (enumState != PlayerState.IDLE 
+        && player.playerAni.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)))
         {
             ChangeState(PlayerState.IDLE);
         }

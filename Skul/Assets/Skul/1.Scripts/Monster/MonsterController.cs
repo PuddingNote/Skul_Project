@@ -17,12 +17,12 @@ public class MonsterController : MonoBehaviour
 
     public Monster monster;
     public MonsterState enumState = MonsterState.IDLE;
+    public int currentHp;       // 현재 HP의 정보를 담을 변수
 
     public MStateMachine mStateMachine { get; private set; }
     // 각 상태를 갖고 있을 딕셔너리
-    private Dictionary<MonsterState, IMonsterState> dictionaryState = new Dictionary<MonsterState, IMonsterState>();
-
-    public int currentHp;       // 현재 HP의 정보를 담을 변수
+    private Dictionary<MonsterState, IMonsterState> dictionaryState 
+        = new Dictionary<MonsterState, IMonsterState>();
 
     public void Start()
     {
@@ -74,12 +74,6 @@ public class MonsterController : MonoBehaviour
         if (monster.hp < currentHp)
         {
             currentHp = monster.hp;
-
-            // 고정형 몬스터는 Hit상태 가기전에 리턴
-            if (monster.moveSpeed == 0)
-            {
-                return;
-            }
             ChangeState(MonsterState.HIT);
         }
 

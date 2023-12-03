@@ -22,7 +22,8 @@ public class TargetSearchRay : MonoBehaviour
     public void TagetCheckRay()
     {
         hit = Physics2D.OverlapBox(monsterController.monster.transform.position,
-        new Vector2(monsterController.monster.sightRangeX, monsterController.monster.sightRangeY), 0, LayerMask.GetMask(GData.PLAYER_LAYER_MASK));
+        new Vector2(monsterController.monster.sightRangeX, monsterController.monster.sightRangeY), 
+        0, LayerMask.GetMask(GData.PLAYER_LAYER_MASK));
     }
 
     // 디버그용 : 플레이어 확인 범위 표시
